@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../components/Layout/Layout";
 import { useAuth } from "../context/auth";
 import { useCart } from "../context/cart";
@@ -12,6 +12,8 @@ const CartPage = () => {
 
     const [auth, setAuth] = useAuth();
     const [cart, setCart] = useCart();
+
+    const [quantity, setQuantity] = useState(1);
 
     const removeCartItem = (pid) => {
         try {
@@ -42,6 +44,16 @@ const CartPage = () => {
             );
         } catch (error) {
             console.log(error);
+        }
+    };
+
+    const increaseQuantity = () => {
+        setQuantity((prevQuantity) => prevQuantity + 1);
+    };
+
+    const decreaseQuantity = () => {
+        if (quantity > 1) {
+            setQuantity((prevQuantity) => prevQuantity - 1);
         }
     };
 
@@ -104,10 +116,27 @@ const CartPage = () => {
                                     <h5>{p.name}</h5>
                                     <p>{p.description.substring(0, 45)}...</p>
                                     <h5>Price: ₹ {p.price}</h5>
-                                    <button
+                                    <div className="d-flex flex-row">
+                                        {/* <button
+                                            className="btn btn-sm btn-outline-secondary"
+                                            onClick={() => decreaseQuantity()}
+                                            style={{width:"2rem", height:"2rem"}}
+                                        >
+                                            -
+                                        </button>
+                                        <span className="mx-2">{quantity}</span>
+                                        <button
+                                            className="btn btn-sm btn-outline-secondary"
+                                            style={{width:"2rem", height:"2rem"}}
+                                            onClick={() => increaseQuantity()}
+                                        >
+                                            +
+                                        </button> */}
+                                        
+                                        <button
                                         className="btn btn-login-pass btn-category btn-cart"
                                         style={{
-                                            border: "0.125rem solid #ffdee9",
+                                            border: "0.125rem solid #ffdee9", marginTop:"-0.2rem"
                                         }}
                                         onClick={() => {
                                             removeCartItem(p._id);
@@ -115,6 +144,7 @@ const CartPage = () => {
                                     >
                                         Remove
                                     </button>
+                                    </div>
                                 </div>
                                 <hr />
                             </div>
@@ -154,17 +184,17 @@ const CartPage = () => {
                                     </h3>
                                 </div>
                                 <div className="card px-5 py-4 mt-5 mb-2">
-                                    <form onSubmit={handlePayment} className="form-order">
+                                    <form
+                                        onSubmit={handlePayment}
+                                        className="form-order"
+                                    >
                                         <div className="col-12">
                                             <p className="fs-5">
                                                 <strong>Name:</strong>
                                                 {auth?.user?.name}
                                             </p>
                                         </div>
-                                        <div
-                                            className="col-12"
-                                            
-                                        >
+                                        <div className="col-12">
                                             <p className="fs-5">
                                                 <strong>Number:</strong>
                                                 {auth?.user?.phone}
@@ -191,9 +221,11 @@ const CartPage = () => {
                                                 <div>
                                                     <button
                                                         className="btn col-12 center category-link-order"
-                                                        onClick={()=>navigate("/login",{
-                                                            state:"/orders"
-                                                        })}
+                                                        onClick={() =>
+                                                            navigate("/login", {
+                                                                state: "/orders",
+                                                            })
+                                                        }
                                                     >
                                                         Please login to get your
                                                         food.

@@ -13,6 +13,12 @@
   color: #474d52;
 }
 
+body {
+  background-image: url('./img/background.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
 .nav-item {
   transition: transform 0.2s ease;
   font-size: 1.10rem;
@@ -202,8 +208,8 @@
 }
 
 .register-page form button {
-  border: 0.05rem solid black;
-  background-color: #474d52;
+  border: 0.1rem solid black;
+  background-color: #433939;
   opacity: 0.5;
   color: white;
   width: 22.8125rem;
@@ -421,6 +427,42 @@
 }
 
 .product-update-btn:hover {
+  /* color: #ffdee9;
+  background-color: #474d52;
+  border-color: #474d52;
+  transform: scale(0.95);
+  background-color: #474d52;
+  color: #ffdee9;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0.2rem;
+  font-size: 1.2rem;
+  color: #474d52;
+  background-color: #ffdee9;
+  border: 0.1rem solid #474d52;
+  gap: 1;
+  border-radius: 0.5rem;
+  transition: all linear 0.1s;
+  transform: scale(1.0);
+  box-shadow: inset;
+
+}
+
+
+.product-reset-btn {
+  color: #474d52;
+  margin-top: 1.0rem;
+  background-color: #ffdee9;
+  border-color: #ffdee9;
+  border: 0.1rem solid #ffdee9;
+  border-radius: 0.5rem;
+  transition: all linear 0.1s;
+  transform: scale(1.0);
+}
+
+.product-reset-btn:hover {
   color: #ffdee9;
   background-color: #474d52;
   border-color: #474d52;
