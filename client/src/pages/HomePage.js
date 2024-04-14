@@ -151,14 +151,7 @@ const HomePage = () => {
                         </div>
                         <div className="d-flex flex-column">
                             <button
-                                className="btn btn-danger product-update-btn"
-                                style={{
-                                    backgroundColor: "rgb(255, 222, 233)",
-                                    color: "rgb(71, 77, 82)",
-                                    border: " 0.15rem solid rgb(255, 222, 233)",
-                                    height: "2.5rem",
-                                    marginTop: "1rem",
-                                }}
+                                className="btn product-reset-btn"
                                 onClick={() => window.location.reload()}
                             >
                                 Reset Filters

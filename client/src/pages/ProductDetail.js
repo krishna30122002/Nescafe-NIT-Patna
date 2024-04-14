@@ -2,19 +2,22 @@ import React, { useEffect, useState } from "react";
 import Layout from "../components/Layout/Layout";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
-
+import toast from "react-hot-toast";
+import { useCart } from "../context/cart";
 
 const ProductDetail = () => {
     const params = useParams();
+    const [cart, setCart] = useCart();
+
     const [product, setProduct] = useState({});
     const [category, setCategory] = useState("");
     // const [categoryId, setCategoryId] = useState("");
     // const [similarProduct, setSimilarProduct] = useState([]);
-    
+
     useEffect(() => {
         const favicon = document.querySelector("link[rel='icon']");
         favicon.href = "../img/favicon.ico";
-    
+
         return () => {
             favicon.href = "";
         };
@@ -81,7 +84,17 @@ const ProductDetail = () => {
                     <h5>Category -: {category}</h5>
                     <hr />
                     <h2>Price -: {product.price}</h2>
-                    <Link to={""} className="btn btn-primary homepage-btn product-submit-btn details-btn">
+                    <Link onClick={() => {
+                            setCart([...cart, product]);
+                            localStorage.setItem(
+                                "cart",
+                                JSON.stringify([...cart, product])
+                            );
+                            toast.success("Product added to Orders");
+                        }}
+                        to={""}
+                        className="btn btn-primary homepage-btn product-submit-btn details-btn"
+                    >
                         Add To Orders
                     </Link>
                 </div>
