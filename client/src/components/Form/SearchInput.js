@@ -25,7 +25,7 @@ const SearchInput = () => {
                 <input
                     className="form-control mr-sm-2 search-bar-input"
                     type="search"
-                    placeholder="What are you carving for?"
+                    placeholder="What are you craving for?"
                     aria-label="Search"
                     value={values.keyword}
                     onChange={(e) =>
