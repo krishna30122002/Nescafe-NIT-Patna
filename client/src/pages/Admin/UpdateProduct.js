@@ -220,7 +220,7 @@ const UpdateProduct = () => {
                                 </div>
                                 <div className="mb-3 product-update">
                                     <button
-                                        className="btn btn-primary product-update-btn"
+                                        className="btn category-link-update-product"
                                         onClick={handleUpdate}
                                     >
                                         Update Product
@@ -231,7 +231,6 @@ const UpdateProduct = () => {
                                             color: "#474d52",
                                             border: "0.15rem solid #ffdee9",
                                             height: "2.5rem",
-                                            marginTop: "1rem",
                                         }}
                                         className="btn btn-category product-delete-btn"
                                         onClick={() => handleDelete()}

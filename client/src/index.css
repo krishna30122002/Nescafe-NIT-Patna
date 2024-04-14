@@ -17,7 +17,9 @@ body {
   background-image: url('./img/background.jpg');
   background-size: cover;
   background-position: center;
+  /* background-attachment: fixed; */
 }
+
 
 .nav-item {
   transition: transform 0.2s ease;
@@ -427,12 +429,6 @@ body {
 }
 
 .product-update-btn:hover {
-  /* color: #ffdee9;
-  background-color: #474d52;
-  border-color: #474d52;
-  transform: scale(0.95);
-  background-color: #474d52;
-  color: #ffdee9;*/
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -528,10 +524,10 @@ body {
 
 .child-homepage:hover {
   transform: scale(1.01);
-  box-shadow: 0 0 0.6rem #b0d1d1;
+  box-shadow: 0 0 0.6rem #2a5252;
 
   .card-title-text-homepage-price {
-    transition: all linear 0.2s;
+    transition: all linear ease-in ease-in-out 0.01s;
     transform: scale(1.0);
   }
 
@@ -766,6 +762,34 @@ body {
   background-color: #474d52;
   border-color: #474d52;
   transform: scale(0.95);
+  background-color: #474d52;
+  color: #ffdee9;
+  box-shadow: inset;
+}
+
+.category-link-update-product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffdee9;
+  background-color: #474d52;
+  border: 0.1rem solid #474d52;
+  height: 2.55rem;
+  margin-top: 0.5rem;
+  gap: 1;
+  border-radius: 0.5rem;
+  transition: all linear 0.1s;
+  transform: scale(1.0);
+}
+
+.category-link-update-product:hover {
+  color: #ffdee9;
+  background-color: #474d52;
+  border-color: #474d52;
+  transform: scale(0.95);
+  height: "2.5rem";
+  margin-top: "1rem";
   background-color: #474d52;
   color: #ffdee9;
   box-shadow: inset;
