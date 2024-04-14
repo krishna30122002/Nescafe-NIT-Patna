@@ -2,9 +2,14 @@ import React from "react";
 import Layout from "../components/Layout/Layout";
 import { useAuth } from "../context/auth";
 import { useCart } from "../context/cart";
-// import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import phonepe from "../img/phonepe.svg";
+// import Payment from "./Payment";
+import { useNavigate } from "react-router-dom";
 
 const CartPage = () => {
+    const navigate = useNavigate();
+
     const [auth, setAuth] = useAuth();
     const [cart, setCart] = useCart();
 
@@ -38,6 +43,10 @@ const CartPage = () => {
         } catch (error) {
             console.log(error);
         }
+    };
+
+    const handlePayment = () => {
+        return;
     };
 
     // const navigate = useNavigate();
@@ -124,6 +133,78 @@ const CartPage = () => {
                         <p>Total | Checkout | Payment</p>
                         <hr />
                         <h3>Total: {totalPrice()}</h3>
+                        <div className="btn">
+                            <div className="container main">
+                                <div className="center">
+                                    <img
+                                        width={100}
+                                        src={phonepe}
+                                        alt="payment.png"
+                                    />
+                                    <h3 className="fs-4 mt-3">
+                                        <span className="w-bold">
+                                            Pay Now using{" "}
+                                            <span
+                                                className="w-bold"
+                                                style={{ color: "#6739B7" }}
+                                            >
+                                                PhonePe
+                                            </span>
+                                        </span>
+                                    </h3>
+                                </div>
+                                <div className="card px-5 py-4 mt-5 mb-2">
+                                    <form onSubmit={handlePayment} className="form-order">
+                                        <div className="col-12">
+                                            <p className="fs-5">
+                                                <strong>Name:</strong>
+                                                {auth?.user?.name}
+                                            </p>
+                                        </div>
+                                        <div
+                                            className="col-12"
+                                            
+                                        >
+                                            <p className="fs-5">
+                                                <strong>Number:</strong>
+                                                {auth?.user?.phone}
+                                            </p>
+                                        </div>
+                                        <div className="col-12">
+                                            <p className="fs-5">
+                                                <strong>Amount:</strong>₹{" "}
+                                                {totalPrice()}
+                                            </p>
+                                        </div>
+                                        <div>
+                                            {auth?.token ? (
+                                                <div className="col-12 center">
+                                                    <Link
+                                                        to={"/payment"}
+                                                        className="w-100 btn category-link-payment"
+                                                        type="submit"
+                                                    >
+                                                        Pay Now
+                                                    </Link>
+                                                </div>
+                                            ) : (
+                                                <div>
+                                                    <button
+                                                        className="btn col-12 center category-link-order"
+                                                        onClick={()=>navigate("/login",{
+                                                            state:"/orders"
+                                                        })}
+                                                    >
+                                                        Please login to get your
+                                                        food.
+                                                    </button>
+                                                </div>
+                                            )}
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

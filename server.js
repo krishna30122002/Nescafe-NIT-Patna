@@ -7,6 +7,7 @@ import connectDatabase from "./config/database.js";
 import authRoutes from "./routes/authRoute.js";
 import categoryRoutes from "./routes/categoryRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
+import paymentRoutes from "./routes/paymentRoutes.js";
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ app.use(morgan("dev"));
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/product", productRoutes);
+app.use("/api/v1/payment", paymentRoutes);
 
 app.get("/", (req, res) => {
     res.send("<h1>Welcome To Nescafe NIT Patna</h1>");

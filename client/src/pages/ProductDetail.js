@@ -81,7 +81,7 @@ const ProductDetail = () => {
                     <h5>Category -: {category}</h5>
                     <hr />
                     <h2>Price -: {product.price}</h2>
-                    <Link to={"/orders"} className="btn btn-primary homepage-btn product-submit-btn details-btn">
+                    <Link to={""} className="btn btn-primary homepage-btn product-submit-btn details-btn">
                         Add To Orders
                     </Link>
                 </div>
