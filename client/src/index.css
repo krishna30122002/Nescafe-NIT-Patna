@@ -17,7 +17,9 @@ body {
   background-image: url('./img/background.jpg');
   background-size: cover;
   background-position: center;
+  /* background-attachment: fixed; */
 }
+
 
 .nav-item {
   transition: transform 0.2s ease;
@@ -522,10 +524,10 @@ body {
 
 .child-homepage:hover {
   transform: scale(1.01);
-  box-shadow: 0 0 0.6rem #b0d1d1;
+  box-shadow: 0 0 0.6rem #2a5252;
 
   .card-title-text-homepage-price {
-    transition: all linear 0.2s;
+    transition: all linear ease-in ease-in-out 0.01s;
     transform: scale(1.0);
   }
 
