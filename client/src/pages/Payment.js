@@ -1,110 +1,98 @@
-import React, { useState } from "react";
+// import express from "express";
+// import React from "react";
 // import axios from "axios";
-// import phonepe from "../img/phonepe.svg";
-// import { Link } from "react-router-dom";
-import Layout from "../components/Layout/Layout";
-import { Link } from "react-router-dom";
-import paymentPage from '../img/payment.svg'
+// import uniqid from "uniqid";
+// import sha256 from "sha256";
 
-const Payment = () => {
-    // const [loading, setLoading] = useState(false);
+// const app = express();
 
-    // const data = {
-    //     name: "Raj",
-    //     amount: 1,
-    //     number: "9876543210",
-    //     MUID: "MUID" + Date.now(),
-    //     txnId: "T" + Date.now(),
-    // };
+// const HOST_URL = "https://api-preprod.phonepe.com/apis/hermes";
+// const MERCHANT_ID = "PGTESTPAYUAT";
+// const SALT_INDEX = 1;
+// const SALT_KEY = "099eb0cd-02cf-4e2a-8aca-3e6c6aff0399";
 
-    // const handlePayment = (e) => {
-    //     e.preventDefault();
-    //     // setLoading(true);
-    //     axios
-    //         .post("http://localhost:8080/api/v1/payment", { ...data })
-    //         .then((res) => {
-    //             setTimeout(() => {
-    //                 // setLoading(false);
-    //             }, 1500);
-    //         })
-    //         .catch((err) => {
-    //             // setLoading(false);
-    //             console.log(err);
-    //         });
-    // };
+// app.get("/pay", (req, res) => {
 
-    return (
-        <>
-            {/* 
-            <div className="container main">
-                <div className="center">
-                    <img width={100} src={phonepe} alt="payment.png" />
-                    <h3 className="fs-4 mt-2">
-                        <span className="w-bold">
-                            Pay Now using{" "}
-                            <span
-                                className="w-bold"
-                                style={{ color: "#6739B7" }}
-                            >
-                                PhonePe
-                            </span>
-                        </span>
-                    </h3>
-                </div>
-                <div className="card px-5 py-4 mt-4">
-                    <form onSubmit={handlePayment}>
-                        <div className="col-12">
-                            <p className="fs-5">
-                                <strong>Name:</strong>
-                                {data.name}
-                            </p>
-                        </div>
-                        <div className="col-12">
-                            <p className="fs-5">
-                                <strong>Number:</strong>
-                                {data.number}
-                            </p>
-                        </div>
-                        <div className="col-12">
-                            <p className="fs-5">
-                                <strong>Amount:</strong>₹ {data.amount}
-                            </p>
-                        </div>
-                        {/* {!loading ? ( */}
-            {/* <div className="col-12 center">
-                                <Link to={"/payment"} className="w-100 btn category-link-payment" type="submit">
-                                    Pay Now
-                                </Link>
-                            </div> */}
-            {/* ) : (
-                            <div className="col-12 text-center">
-                                <button className="w-100" type="submit">
-                                    <div
-                                        className="spinner-border"
-                                        role="status"
-                                    >
-                                        <span className="visually-hidden">
-                                            Loading...
-                                        </span>
-                                    </div>
-                                </button>
-                            </div> */}
-            {/* )} */}
-            {/* </form>
-                </div>
-            </div> */}
-            {/* */}
-            <Layout>
-                <div className="container container-payment">
-                <div className="column align-center justify center">
-                    <img className="under_construction" src={paymentPage} alt="payment_construction.png" />
-                    {/* <h1 className="text-center">Sorry!</h1> */}
-                    <Link  to={'/orders'} className="btn btn-category payment-go-back">Go Back</Link>
-                    </div>
-                </div>
-            </Layout>
-        </>
-    );
-};
+//     const endPoint = "/pg/v1/pay";
+//     const merchantTransactionId = uniqid();
+//     const userId = 123;
 
-export default Payment;
+//     const payload = {
+//         merchantId: MERCHANT_ID,
+//         // install uniqid
+//         merchantTransactionId: merchantTransactionId,
+//         merchantUserId: userId,
+//         amount: 10000,
+//         redirectUrl: `http://localhost:8080/redirect-url/${merchantTransactionId}`,
+//         redirectMode: "REDIRECT",
+//         mobileNumber: "9999999999",
+//         paymentInstrument: {
+//             type: "PAY_PAGE",
+//         },
+//     };
+
+//     const bufferObj = Buffer.from(JSON.stringify(payload), "utf-8");
+//     const base63EncodedPayload = bufferObj.toString("base64");
+//     const xVerify =
+//         sha256(base63EncodedPayload + endPoint + SALT_KEY) + "###" + SALT_INDEX;
+
+//     const options = {
+//         method: "post",
+//         url: `${HOST_URL}${endPoint}`,
+//         headers: {
+//             accept: "application/json",
+//             "Content-Type": "application/json",
+//             "X-VERIFY": xVerify,
+//         },
+//         data: {
+//             request: base63EncodedPayload,
+//         },
+//     };
+//     axios
+//         .request(options)
+//         .then(function (response) {
+//             console.log(response.data);
+//             const url = response.data.data.instrumentResponse.redirectInfo.url;
+//             res.redirect(url);
+//         })
+//         .catch(function (error) {
+//             console.error(error);
+//         });
+// });
+
+// app.get("/redirect-url/:merchantTransactionId", (req, res) => {
+//     const { merchantTransactionId } = req.params;
+//     console.log("merchantTransactionId",merchantTransactionId);
+//     if (merchantTransactionId) {
+//         const xVerify=sha256(`/pg/v1/status/${MERCHANT_ID}/${merchantTransactionId}`+SALT_KEY)+"###"+SALT_INDEX;
+//         const options = {
+//             method: "get",
+//             url: `${HOST_URL}/pg/v1/status/${MERCHANT_ID}/${merchantTransactionId}`,
+//             headers: {
+//                 accept: "application/json",
+//                 "Content-Type": "application/json",
+//                 "X-MERCHANT-ID":merchantTransactionId,
+//                 "X-VERIFY":xVerify
+//             },
+//         };
+//         axios
+//         .request(options)
+//         .then(function (response) {
+//             console.log(response.data);
+//             res.send(response.data)
+//             if(response.data.code==="PAYMENT_SUCCESS"){
+//                     //redirect to frontend
+//                 }else if(response.data.code==="PAYMENT_ERROR"){
+//                     // redirect to front end error 
+//                 }else{
+//                     //pending
+//                 }
+//     res.send({ merchantTransactionId });
+//             })
+//             .catch(function (error) {
+//                     console.error(error);
+//                 });
+//         } else {
+//         res.send({ error: "Error" });
+//     }
+// });

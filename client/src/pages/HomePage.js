@@ -224,14 +224,7 @@ const HomePage = () => {
                         <div>
                             {products && products.length < total && (
                                 <button
-                                    style={{
-                                        backgroundColor: "rgb(255, 222, 233)",
-                                        color: "rgb(71, 77, 82)",
-                                        border: " 0.15rem solid rgb(255, 222, 233)",
-                                        height: "2.5rem",
-                                        marginTop: "1rem",
-                                    }}
-                                    className="btn btn-primary product-update-btn load-more"
+                                    className="btn btn-primary load-more"
                                     onClick={(e) => {
                                         e.preventDefault();
                                         setPage(page + 1);

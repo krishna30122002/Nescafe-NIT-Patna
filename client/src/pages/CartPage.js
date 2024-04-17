@@ -13,7 +13,7 @@ const CartPage = () => {
     const [auth, setAuth] = useAuth();
     const [cart, setCart] = useCart();
 
-    const [quantity, setQuantity] = useState(1);
+    // const [quantity, setQuantity] = useState(1);
 
     const removeCartItem = (pid) => {
         try {
@@ -47,21 +47,41 @@ const CartPage = () => {
         }
     };
 
-    const increaseQuantity = () => {
-        setQuantity((prevQuantity) => prevQuantity + 1);
-    };
+    // const increaseQuantity = () => {
+    //     setQuantity((prevQuantity) => prevQuantity + 1);
+    // };
 
-    const decreaseQuantity = () => {
-        if (quantity > 1) {
-            setQuantity((prevQuantity) => prevQuantity - 1);
-        }
-    };
+    // const decreaseQuantity = () => {
+    //     if (quantity > 1) {
+    //         setQuantity((prevQuantity) => prevQuantity - 1);
+    //     }
+    // };
+
+    // const handlePayment = ({props}) => {
+    //     // Make a POST request to your backend endpoint with the amountFrontend
+    //     fetch("http://localhost:8080/pay", {
+    //       method: "POST",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //       body: JSON.stringify({ props }),
+    //     })
+    //       .then((response) => response.json())
+    //       .then((data) => {
+    //         console.log(data);
+    //         // Handle response if needed
+    //       })
+    //       .catch((error) => {
+    //         console.error("Error:", error);
+    //         // Handle error if needed
+    //       });
+    //   };
+
+    // const navigate = useNavigate();
 
     const handlePayment = () => {
         return;
     };
-
-    // const navigate = useNavigate();
     return (
         <Layout title={"Orders | Nescafé"}>
             <div className="container p-0">
@@ -117,33 +137,18 @@ const CartPage = () => {
                                     <p>{p.description.substring(0, 45)}...</p>
                                     <h5>Price: ₹ {p.price}</h5>
                                     <div className="d-flex flex-row">
-                                        {/* <button
-                                            className="btn btn-sm btn-outline-secondary"
-                                            onClick={() => decreaseQuantity()}
-                                            style={{width:"2rem", height:"2rem"}}
+                                        <button
+                                            className="btn btn-login-pass btn-category btn-cart"
+                                            style={{
+                                                border: "0.125rem solid #ffdee9",
+                                                marginTop: "-0.2rem",
+                                            }}
+                                            onClick={() => {
+                                                removeCartItem(p._id);
+                                            }}
                                         >
-                                            -
+                                            Remove
                                         </button>
-                                        <span className="mx-2">{quantity}</span>
-                                        <button
-                                            className="btn btn-sm btn-outline-secondary"
-                                            style={{width:"2rem", height:"2rem"}}
-                                            onClick={() => increaseQuantity()}
-                                        >
-                                            +
-                                        </button> */}
-                                        
-                                        <button
-                                        className="btn btn-login-pass btn-category btn-cart"
-                                        style={{
-                                            border: "0.125rem solid #ffdee9", marginTop:"-0.2rem"
-                                        }}
-                                        onClick={() => {
-                                            removeCartItem(p._id);
-                                        }}
-                                    >
-                                        Remove
-                                    </button>
                                     </div>
                                 </div>
                                 <hr />
@@ -210,9 +215,10 @@ const CartPage = () => {
                                             {auth?.token ? (
                                                 <div className="col-12 center">
                                                     <Link
-                                                        to={"/payment"}
+                                                        to={
+                                                            "http://localhost:8080/pay"
+                                                        }
                                                         className="w-100 btn category-link-payment"
-                                                        type="submit"
                                                     >
                                                         Pay Now
                                                     </Link>

@@ -31,8 +31,13 @@ const Header = () => {
     };
 
     return (
-        <div>
-            <nav className="navbar navbar-expand-lg navbar-light navbar-template">
+        <div >
+            <nav className="navbar navbar-expand-lg navbar-light navbar-template" style={{position: "fixed",
+            top: 0,
+            zIndex: 1,
+            width: "100%",
+            paddingTop:"0.7rem",
+            background: "rgb(217 204 204)"}}>
                 <NavLink to="/">
                     <img className="navbar-logo" src={imgLogo} alt="logo" />
                 </NavLink>

@@ -56,10 +56,6 @@ body {
   padding: 0;
 }
 
-.navbar-template {
-  margin-top: 0.15rem;
-}
-
 .pnf {
   display: flex;
   min-height: 75vh;
@@ -527,7 +523,7 @@ body {
   box-shadow: 0 0 0.6rem #2a5252;
 
   .card-title-text-homepage-price {
-    transition: all linear ease-in ease-in-out 0.01s;
+    transition: all linear 0.1s;
     transform: scale(1.0);
   }
 
@@ -587,8 +583,20 @@ body {
 .load-more {
   float: right;
   margin: 1rem;
+  height: 2.5rem;
   margin-top: 5rem;
-  /* margin-bottom: -8rem; */
+  margin-right: 3rem;
+  border-radius: 0.4rem;
+  background-color: #ffdee9;
+  border: 2px solid #ffdee9;
+  color: #474d52;
+}
+
+.load-more:hover {
+  background-color: #474d52;
+  color: #ffdee9;
+  transition: all linear 0.1s;
+  transform: scale(0.95);
 }
 
 .search-bar {
