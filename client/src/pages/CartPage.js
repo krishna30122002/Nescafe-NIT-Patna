@@ -1,17 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "../components/Layout/Layout";
 import { useAuth } from "../context/auth";
 import { useCart } from "../context/cart";
 import { Link } from "react-router-dom";
-import phonepe from "../img/phonepe.svg";
+import paypallogo from "../img/paypalpng.png";
+import PayPal from "../img/paypal.svg";
 // import Payment from "./Payment";
 import { useNavigate } from "react-router-dom";
+import DropIn from "braintree-web-drop-in-react";
+import axios from "axios";
+import toast from "react-hot-toast";
+import { Image } from "antd";
 
 const CartPage = () => {
     const navigate = useNavigate();
 
     const [auth] = useAuth();
     const [cart, setCart] = useCart();
+    const [clientToken, setClientToken] = useState();
+    const [instance, setInstance] = useState();
+    const [loading, setLoading] = useState(false);
 
     // const [quantity, setQuantity] = useState(1);
 
@@ -61,7 +69,7 @@ const CartPage = () => {
     //             style: "currency",
     //             currency: "INR",
     //         }, myObj);
-    
+
     //         // Sending total to backend
     //         fetch('/api/v1/total-price', {
     //             method: 'POST',
@@ -80,14 +88,12 @@ const CartPage = () => {
     //         .catch(error => {
     //             console.error('Error:', error);
     //         });
-    
+
     //         return formattedTotal;
     //     } catch (error) {
     //         console.log(error);
     //     }
     // };
-    
-    
 
     // const increaseQuantity = () => {
     //     setQuantity((prevQuantity) => prevQuantity + 1);
@@ -121,8 +127,41 @@ const CartPage = () => {
 
     // const navigate = useNavigate();
 
-    const handlePayment = () => {
-        return;
+    // payment gateway
+    const getToken = async () => {
+        try {
+            const { data } = await axios.get(
+                "http://localhost:8080/api/v1/product/braintree/token"
+            );
+            setClientToken(data?.clientToken);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+    useEffect(() => {
+        getToken();
+    }, [auth?.token]);
+
+    const handlePayment = async () => {
+        try {
+            setLoading(true);
+            const { nonce } = await instance.requestPaymentMethod();
+            const { data } = await axios.post(
+                "http://localhost:8080/api/v1/product/braintree/payment",
+                {
+                    nonce,
+                    cart,
+                }
+            );
+            setLoading(false);
+            localStorage.removeItem("cart");
+            setCart([]);
+            navigate("/dashboard/user/orders");
+            toast.success("Payment Successful");
+        } catch (error) {
+            console.log(error);
+            setLoading(false);
+        }
     };
     return (
         <Layout title={"Orders | Nescafé"}>
@@ -213,24 +252,32 @@ const CartPage = () => {
                         <div className="btn">
                             <div className="container main">
                                 <div className="center">
-                                    <img
-                                        width={100}
-                                        src={phonepe}
-                                        alt="payment.png"
-                                    />
+                                    <div>
+                                        <img
+                                            style={{ marginTop: "0.5rem" }}
+                                            width={100}
+                                            src={paypallogo}
+                                            alt="payment.png"
+                                        />
+                                    </div>
                                     <h3 className="fs-4 mt-3">
                                         <span className="w-bold">
                                             Pay Now using{" "}
-                                            <span
+                                            <img
+                                                width={100}
+                                                src={PayPal}
+                                                alt="payment.png"
+                                            />
+                                            {/* <span
                                                 className="w-bold"
-                                                style={{ color: "#6739B7" }}
+                                                style={{ color: "#003087" }}
                                             >
-                                                PhonePe
-                                            </span>
+                                                PayPal
+                                            </span> */}
                                         </span>
                                     </h3>
                                 </div>
-                                <div className="card px-5 py-4 mt-5 mb-2">
+                                <div className="card px-5 py-4 mt-2 mb-2">
                                     <form
                                         onSubmit={handlePayment}
                                         className="form-order"
@@ -256,14 +303,14 @@ const CartPage = () => {
                                         <div>
                                             {auth?.token ? (
                                                 <div className="col-12 center">
-                                                    <Link
+                                                    {/* <Link
                                                         to={
                                                             "http://localhost:8080/pay"
                                                         }
                                                         className="w-100 btn category-link-payment"
                                                     >
                                                         Pay Now
-                                                    </Link>
+                                                    </Link> */}
                                                 </div>
                                             ) : (
                                                 <div>
@@ -280,6 +327,42 @@ const CartPage = () => {
                                                     </button>
                                                 </div>
                                             )}
+                                            <div className="mt-2">
+                                                {!clientToken ||
+                                                !cart?.length ? (
+                                                    ""
+                                                ) : (
+                                                    <DropIn
+                                                        options={{
+                                                            authorization:
+                                                                clientToken,
+                                                            paypal: {
+                                                                flow: "vault",
+                                                            },
+                                                        }}
+                                                        onInstance={(
+                                                            instance
+                                                        ) =>
+                                                            setInstance(
+                                                                instance
+                                                            )
+                                                        }
+                                                    />
+                                                )}
+                                                <button
+                                                    className="btn btn-order"
+                                                style={{marginTop:"1.5rem"}}
+                                                    onClick={handlePayment}
+                                                    disabled={
+                                                        loading ||
+                                                        !instance
+                                                    }
+                                                >
+                                                    {loading
+                                                        ? "Processing..."
+                                                        : "Make Payment"}
+                                                </button>
+                                            </div>
                                         </div>
                                     </form>
                                 </div>

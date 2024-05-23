@@ -162,7 +162,7 @@ const HomePage = () => {
                     <div className="col-md-9 dashboard-content parent-wrapper">
                         {/* {JSON.stringify(checked, null, 4)} */}
                         <h1 className="text-center">All Products</h1>
-                        <h1 className="text-underline">Products</h1>
+                        {/* <h1 className="text-underline">Products</h1> */}
                         <div className="d-flex parent">
                             {products?.map((p) => (
                                 <Link

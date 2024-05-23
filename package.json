@@ -2,7 +2,7 @@
   "name": "nescafe",
   "proxy": "http://localhost:8080",
   "version": "1.0.0",
-  "description": "",
+  "description": "Online Nescafe Store for Students",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -19,6 +19,7 @@
     "axios": "^1.6.8",
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
+    "braintree": "^3.23.0",
     "colors": "^1.4.0",
     "concurrently": "^8.2.2",
     "cors": "^2.8.5",

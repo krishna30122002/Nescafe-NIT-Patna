@@ -14,6 +14,7 @@
     "@testing-library/user-event": "^13.5.0",
     "antd": "^5.14.2",
     "axios": "^1.6.7",
+    "braintree-web-drop-in-react": "^1.2.1",
     "concurrently": "^8.2.2",
     "font-awesome": "^4.7.0",
     "moment": "^2.30.1",
