@@ -2,15 +2,12 @@ import React, { useEffect, useState } from "react";
 import Layout from "../components/Layout/Layout";
 import { useAuth } from "../context/auth";
 import { useCart } from "../context/cart";
-import { Link } from "react-router-dom";
 import paypallogo from "../img/paypalpng.png";
 import PayPal from "../img/paypal.svg";
-// import Payment from "./Payment";
 import { useNavigate } from "react-router-dom";
 import DropIn from "braintree-web-drop-in-react";
 import axios from "axios";
 import toast from "react-hot-toast";
-import { Image } from "antd";
 
 const CartPage = () => {
     const navigate = useNavigate();

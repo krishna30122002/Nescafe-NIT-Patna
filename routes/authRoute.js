@@ -8,6 +8,8 @@ import {
     forgotPasswordController,
     updateProfileController,
     getOrdersController,
+    getAllOrdersController,
+    orderStatusController,
 } from "../controllers/authController.js";
 
 const router = express.Router();
@@ -29,5 +31,9 @@ router.get('/admin-auth', requireSignIn, isAdmin, (req,res)=>{
 router.put('/profile', requireSignIn, updateProfileController)
 
 router.get('/user-orders', requireSignIn, getOrdersController)
+
+router.get('/all-orders', requireSignIn, isAdmin, getAllOrdersController)
+
+router.put('/order-status/:orderId', requireSignIn, isAdmin, orderStatusController)
 
 export default router

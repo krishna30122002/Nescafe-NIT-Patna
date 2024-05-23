@@ -24,6 +24,7 @@ import Categories from "./pages/Categories";
 import CategoryProduct from "./pages/CategoryProduct";
 import CartPage from "./pages/CartPage";
 import Payment from "./pages/Payment";
+import AdminOrders from "./pages/Admin/AdminOrders";
 // import {ToastContainer} from 'react-toastify'
 
 function App() {
@@ -58,6 +59,7 @@ function App() {
                     />
                     <Route path="admin/products" element={<Products />} />
                     <Route path="admin/users" element={<Users />} />
+                    <Route path="admin/orders" element={<AdminOrders />} />
                 </Route>
                 <Route path="/register" element={<Register />} />
                 <Route path="/forgot-password" element={<ForgotPassword />} />
