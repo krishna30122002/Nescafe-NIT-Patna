@@ -806,6 +806,7 @@ body {
 .form-order {
   /* display: flex; */
   align-items: center;
+  cursor: default;
 }
 
 .category-link-order {
@@ -832,4 +833,16 @@ body {
   background-color: #474d52;
   color: #ffdee9;
   box-shadow: inset;
+}
+
+.btn-order{
+  width: 100%;
+  background-color: #009cde;
+  color: white;
+}
+
+.btn-order:hover{
+  transition: all linear 0.2s;
+  transform: scale(0.95);
+  color: white;
 }
