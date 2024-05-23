@@ -1,13 +1,12 @@
 import express from "express";
+import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import morgan from "morgan";
 import cors from "cors";
-import colors from "colors";
 import connectDatabase from "./config/database.js";
 import authRoutes from "./routes/authRoute.js";
 import categoryRoutes from "./routes/categoryRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
-import paymentRoutes from "./routes/paymentRoutes.js";
 import axios from "axios";
 import uniqid from "uniqid";
 import sha256 from "sha256";
@@ -25,14 +24,20 @@ app.use(morgan("dev"));
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/product", productRoutes);
-app.use("/api/v1/payment", paymentRoutes);
+app.use("/api/v1/payment", productRoutes);
+
+app.use(bodyParser.json());
+
+// let totalPrice=0;
+// app.post("/api/v1/total-price", (req, res) => {
+//     totalPrice = req.body.totalPrice; // Assuming the total price is sent in the request body
+//     console.log("Received total price:", totalPrice);
+//     // Do something with the total price, such as saving it to a database
+//     res.send("Total price received successfully");
+// });
+
 
 // payment api integration
-
-// app.post("/pay", (req, res) => {
-//     const { amountFrontend } = req.body;
-//     // Use amountFrontend as needed in your payment processing logic
-//   });
 
 const HOST_URL = "https://api-preprod.phonepe.com/apis/hermes";
 const MERCHANT_ID = "PGTESTPAYUAT";
@@ -49,7 +54,7 @@ app.get("/pay", (req, res) => {
         // install uniqid
         merchantTransactionId: merchantTransactionId,
         merchantUserId: userId,
-        amount: 100,
+        amount: 1,
         redirectUrl: `http://localhost:8080/redirect-url/${merchantTransactionId}`,
         redirectMode: "REDIRECT",
         mobileNumber: "9999999999",
@@ -112,7 +117,7 @@ app.get("/redirect-url/:merchantTransactionId", (req, res) => {
             .request(options)
             .then(function (response) {
                 console.log(response.data);
-                res.send(response.data);
+                // res.send(response.data);
                 res.redirect("http://localhost:3000/");
                 // if (response.data.code === "PAYMENT_SUCCESS") {
                 //     res.redirect("http://localhost:3000/")

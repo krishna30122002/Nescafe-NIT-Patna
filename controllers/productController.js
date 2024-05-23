@@ -321,3 +321,28 @@ export const productCategoryController = async (req, res) => {
         });
     }
 };
+
+// export const paymentController = async (req, res) => {
+//     try {
+//         const { cart } = req.body;
+//         let total = 0;
+//         cart?.forEach((item) => {
+//             total += item.price;
+//         });
+
+//         // Assuming you're sending a request to your backend to process payment
+//         const response = await axios.post('/process-payment', { total, cart });
+
+//         if (response.data.success) {
+//             // If payment is successful, redirect the user
+//             window.location.href = "http://localhost:3000/";
+//         } else {
+//             // If payment fails, handle the error
+//             // You might want to display an error message to the user
+//             console.error(response.data.error);
+//         }
+//     } catch (error) {
+//         console.error(error);
+//         // Handle other errors if necessary
+//     }
+// };

@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 const CartPage = () => {
     const navigate = useNavigate();
 
-    const [auth, setAuth] = useAuth();
+    const [auth] = useAuth();
     const [cart, setCart] = useCart();
 
     // const [quantity, setQuantity] = useState(1);
@@ -46,6 +46,48 @@ const CartPage = () => {
             console.log(error);
         }
     };
+
+    // const totalPrice = () => {
+    //     const myObj = {
+    //         style: "currency",
+    //         currency: "INR",
+    //     };
+    //     try {
+    //         let total = 0;
+    //         cart?.map((item) => {
+    //             total = total + item.price;
+    //         });
+    //         const formattedTotal = total.toLocaleString("en-IN", {
+    //             style: "currency",
+    //             currency: "INR",
+    //         }, myObj);
+    
+    //         // Sending total to backend
+    //         fetch('/api/v1/total-price', {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json'
+    //             },
+    //             body: JSON.stringify({ totalPrice: formattedTotal })
+    //         })
+    //         .then(response => {
+    //             if (!response.ok) {
+    //                 throw new Error('Failed to send total to backend');
+    //             }
+    //             // Handle successful response
+    //             console.log('Total sent successfully');
+    //         })
+    //         .catch(error => {
+    //             console.error('Error:', error);
+    //         });
+    
+    //         return formattedTotal;
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // };
+    
+    
 
     // const increaseQuantity = () => {
     //     setQuantity((prevQuantity) => prevQuantity + 1);
