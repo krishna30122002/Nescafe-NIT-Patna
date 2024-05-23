@@ -1,27 +1,29 @@
 import React, { useEffect, useState } from "react";
+import AdminMenu from "../../components/Layout/AdminMenu";
 import Layout from "../../components/Layout/Layout";
-import UserMenu from "../../components/Layout/UserMenu";
-import axios from "axios";
+import moment from 'moment'
 import { useAuth } from "../../context/auth";
-import moment from "moment";
+import axios from "axios";
+import toast from "react-hot-toast";
+import { Select } from "antd";
+const { Option } = Select;
 
-const Orders = () => {
+const AdminOrders = () => {
     const [auth, setAuth] = useAuth();
     const [orders, setOrders] = useState([]);
-
-    useEffect(() => {
-        const favicon = document.querySelector("link[rel='icon']");
-        favicon.href = "../../img/favicon.ico";
-
-        return () => {
-            favicon.href = "";
-        };
-    }, []);
+    const [status, setStatus] = useState([
+        "Not in Process",
+        "Accepted",
+        "Processing",
+        "Ready to Collect",
+        "Cancel",
+    ]);
+    const [changeStatus, setChangeStatus] = useState("");
 
     const getOrders = async () => {
         try {
             const { data } = await axios.get(
-                "http://localhost:8080/api/v1/auth/user-orders"
+                "http://localhost:8080/api/v1/auth/all-orders"
             );
             setOrders(data);
         } catch (error) {
@@ -31,12 +33,31 @@ const Orders = () => {
     useEffect(() => {
         if (auth?.token) getOrders();
     }, [auth?.token]);
+    
+    useEffect(() => {
+        const favicon = document.querySelector("link[rel='icon']");
+        favicon.href = "../img/favicon.ico";
+
+        return () => {
+            favicon.href = "";
+        };
+    }, []);
+
+    const handleChange=async(orderId, value)=>{
+        try { 
+            const {data} = await axios.put(`http://localhost:8080/api/v1/auth/order-status/${orderId}`,{status:value,})
+            getOrders();
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     return (
-        <Layout title="Your Orders | Nescafè">
+        <Layout title={"All Orders | Outlet"}>
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-md-3 dashboard-menu">
-                        <UserMenu />
+                        <AdminMenu />
                     </div>
                     <div className="col-md-9 dashboard-content">
                         <h1 className="text-center">All Orders</h1>
@@ -57,7 +78,15 @@ const Orders = () => {
                                         <tbody className="container-table-row">
                                             <tr>
                                                 <td>{idx + 1}</td>
-                                                <td>{order?.status}</td>
+                                                <td>
+                                                    <Select variant={false} onChange={(val)=>handleChange(order._id,val)} defaultValue={order?.status}>
+                                                        {
+                                                            status.map((s,i)=>(
+                                                                <Option key={i} value={s}>{s}</Option>
+                                                            ))
+                                                        }
+                                                    </Select>
+                                                </td>
                                                 <td>{order?.buyer?.name}</td>
                                                 <td>
                                                     {moment(
@@ -106,7 +135,7 @@ const Orders = () => {
                                                     <p>
                                                         {p.description.substring(
                                                             0,
-                                                            60
+                                                            45
                                                         )}
                                                         ...
                                                     </p>
@@ -126,4 +155,4 @@ const Orders = () => {
     );
 };
 
-export default Orders;
+export default AdminOrders;

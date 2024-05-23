@@ -846,3 +846,22 @@ body {
   transform: scale(0.95);
   color: white;
 }
+
+.product-img-orders{
+  height: 11rem;
+  width: 11rem;
+}
+
+.margin-of-cart{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 2.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.container-orders{
+  /* padding: 0.5rem; */
+  border-radius: 0.5rem;
+  border: 2px dashed black;
+  margin: 1rem 0.5rem;
+}
