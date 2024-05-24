@@ -21,9 +21,9 @@ app.use(bodyParser.json());
 
 const BASE_URL=process.env.BASE_URL;
 
-app.use(`/api/v1/auth`, authRoutes);
-app.use(`/api/v1/category`, categoryRoutes);
-app.use(`/api/v1/product`, productRoutes);
+app.use(`${BASE_URL}/api/v1/auth`, authRoutes);
+app.use(`${BASE_URL}/api/v1/category`, categoryRoutes);
+app.use(`${BASE_URL}/api/v1/product`, productRoutes);
 
 
 app.get("/", (req, res) => {
