@@ -4,21 +4,20 @@ import Layout from "../../components/Layout/Layout";
 import moment from 'moment'
 import { useAuth } from "../../context/auth";
 import axios from "axios";
-import toast from "react-hot-toast";
 import { Select } from "antd";
 const { Option } = Select;
 
 const AdminOrders = () => {
-    const [auth, setAuth] = useAuth();
+    const [auth] = useAuth();
     const [orders, setOrders] = useState([]);
-    const [status, setStatus] = useState([
+    const [status] = useState([
         "Not in Process",
         "Accepted",
         "Processing",
         "Ready to Collect",
         "Cancel",
     ]);
-    const [changeStatus, setChangeStatus] = useState("");
+    // const [changeStatus, setChangeStatus] = useState("");
 
     const getOrders = async () => {
         try {
@@ -47,6 +46,7 @@ const AdminOrders = () => {
         try { 
             const {data} = await axios.put(`${process.env.REACT_APP_API}/api/v1/auth/order-status/${orderId}`,{status:value,})
             getOrders();
+            console.log(data);
         } catch (error) {
             console.log(error)
         }

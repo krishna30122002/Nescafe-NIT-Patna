@@ -66,6 +66,7 @@ const HomePage = () => {
     useEffect(() => {
         if (page === 1) return;
         loadMore();
+        // eslint-disable-next-line
     }, [page]);
 
     const loadMore = async () => {
@@ -99,6 +100,7 @@ const HomePage = () => {
 
     useEffect(() => {
         if (checked.length || radio.length) filteredByPrice();
+        // eslint-disable-next-line
     }, [checked, radio]);
 
     const filteredByPrice = async () => {

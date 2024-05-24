@@ -39,7 +39,8 @@ const CartPage = () => {
         };
         try {
             let total = 0;
-            cart?.map((item) => {
+            // eslint-disable-next-line array-callback-return
+            cart?.map(item => {
                 total = total + item.price;
             });
             return total.toLocaleString(
@@ -51,78 +52,6 @@ const CartPage = () => {
             console.log(error);
         }
     };
-
-    // const totalPrice = () => {
-    //     const myObj = {
-    //         style: "currency",
-    //         currency: "INR",
-    //     };
-    //     try {
-    //         let total = 0;
-    //         cart?.map((item) => {
-    //             total = total + item.price;
-    //         });
-    //         const formattedTotal = total.toLocaleString("en-IN", {
-    //             style: "currency",
-    //             currency: "INR",
-    //         }, myObj);
-
-    //         // Sending total to backend
-    //         fetch('/api/v1/total-price', {
-    //             method: 'POST',
-    //             headers: {
-    //                 'Content-Type': 'application/json'
-    //             },
-    //             body: JSON.stringify({ totalPrice: formattedTotal })
-    //         })
-    //         .then(response => {
-    //             if (!response.ok) {
-    //                 throw new Error('Failed to send total to backend');
-    //             }
-    //             // Handle successful response
-    //             console.log('Total sent successfully');
-    //         })
-    //         .catch(error => {
-    //             console.error('Error:', error);
-    //         });
-
-    //         return formattedTotal;
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // };
-
-    // const increaseQuantity = () => {
-    //     setQuantity((prevQuantity) => prevQuantity + 1);
-    // };
-
-    // const decreaseQuantity = () => {
-    //     if (quantity > 1) {
-    //         setQuantity((prevQuantity) => prevQuantity - 1);
-    //     }
-    // };
-
-    // const handlePayment = ({props}) => {
-    //     // Make a POST request to your backend endpoint with the amountFrontend
-    //     fetch("http://localhost:8080/pay", {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //       body: JSON.stringify({ props }),
-    //     })
-    //       .then((response) => response.json())
-    //       .then((data) => {
-    //         console.log(data);
-    //         // Handle response if needed
-    //       })
-    //       .catch((error) => {
-    //         console.error("Error:", error);
-    //         // Handle error if needed
-    //       });
-    //   };
-
-    // const navigate = useNavigate();
 
     // payment gateway
     const getToken = async () => {
@@ -143,6 +72,7 @@ const CartPage = () => {
         try {
             setLoading(true);
             const { nonce } = await instance.requestPaymentMethod();
+            // eslint-disable-next-line
             const { data } = await axios.post(
                 `${process.env.REACT_APP_API}/api/v1/product/braintree/payment`,
                 {
@@ -150,6 +80,7 @@ const CartPage = () => {
                     cart,
                 }
             );
+            
             setLoading(false);
             localStorage.removeItem("cart");
             setCart([]);

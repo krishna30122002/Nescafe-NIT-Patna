@@ -15,6 +15,7 @@ export default function useCategory(){
     }
     useEffect(()=>{
         getCategories();
+        // eslint-disable-next-line
     },[]);
 
     return categories;
