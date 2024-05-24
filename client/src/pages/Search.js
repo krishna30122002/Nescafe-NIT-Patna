@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 const Search = () => {
     const [cart, setCart] = useCart();
 
-    const [values, useValues] = useSearch();
+    const [values] = useSearch();
     return (
         <Layout title={"Seach Results | Nescafé"}>
             <div className="container mt-4 mb-4">
