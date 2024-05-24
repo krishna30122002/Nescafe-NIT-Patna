@@ -23,7 +23,7 @@ const Search = () => {
                         {values?.result.map((p) => (
                             <Link
                                 key={p._id}
-                                to={`/dashboard/admin/product/${p.slug}`}
+                                to={`/product/${p.slug}`}
                                 className="product-link"
                             >
                                 <div
