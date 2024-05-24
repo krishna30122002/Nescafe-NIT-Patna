@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 const Search = () => {
     const [cart, setCart] = useCart();
 
-    const [values, useValues] = useSearch();
+    const [values] = useSearch();
     return (
         <Layout title={"Seach Results | Nescafé"}>
             <div className="container mt-4 mb-4">
@@ -34,7 +34,7 @@ const Search = () => {
                                 >
                                     <img
                                         className="card-img-top product-img"
-                                        src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
+                                        src={`${process.env.REACT_APP_API}/api/v1/product/product-photo/${p._id}`}
                                         alt={p.name}
                                     />
                                     <div className="card-body card-body-homepage">

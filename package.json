@@ -1,6 +1,5 @@
 {
   "name": "nescafe",
-  "proxy": "http://localhost:8080",
   "version": "1.0.0",
   "description": "Online Nescafe Store for Students",
   "main": "index.js",
