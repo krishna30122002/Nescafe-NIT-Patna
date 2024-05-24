@@ -6,7 +6,7 @@ import { useAuth } from "../../context/auth";
 import moment from "moment";
 
 const Orders = () => {
-    const [auth, setAuth] = useAuth();
+    const [auth] = useAuth();
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {

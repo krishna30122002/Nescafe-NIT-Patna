@@ -24,6 +24,7 @@ const CategoryProduct = () => {
         if (params?.slug) {
             getProductByCategory();
         }
+        // eslint-disable-next-line
     }, []);
 
     const getProductByCategory = async () => {
