@@ -23,7 +23,7 @@ const Login = () => {
         e.preventDefault();
         try {
             const res = await axios.post(
-                "http://localhost:8080/api/v1/auth/login",
+                `${process.env.REACT_APP_API}/api/v1/auth/login`,
                 { email, password }
             );
             if (res && res.data.success) {

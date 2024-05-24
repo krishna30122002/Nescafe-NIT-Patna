@@ -128,7 +128,7 @@ const CartPage = () => {
     const getToken = async () => {
         try {
             const { data } = await axios.get(
-                "http://localhost:8080/api/v1/product/braintree/token"
+                `${process.env.REACT_APP_API}/api/v1/product/braintree/token`
             );
             setClientToken(data?.clientToken);
         } catch (error) {
@@ -144,7 +144,7 @@ const CartPage = () => {
             setLoading(true);
             const { nonce } = await instance.requestPaymentMethod();
             const { data } = await axios.post(
-                "http://localhost:8080/api/v1/product/braintree/payment",
+                `${process.env.REACT_APP_API}/api/v1/product/braintree/payment`,
                 {
                     nonce,
                     cart,
@@ -197,7 +197,7 @@ const CartPage = () => {
                                 <div className="col-md-4 mt-1">
                                     <img
                                         className="card-img-top product-img"
-                                        src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
+                                        src={`${process.env.REACT_APP_API}/api/v1/product/product-photo/${p._id}`}
                                         alt={p.name}
                                     />
                                 </div>
@@ -300,14 +300,6 @@ const CartPage = () => {
                                         <div>
                                             {auth?.token ? (
                                                 <div className="col-12 center">
-                                                    {/* <Link
-                                                        to={
-                                                            "http://localhost:8080/pay"
-                                                        }
-                                                        className="w-100 btn category-link-payment"
-                                                    >
-                                                        Pay Now
-                                                    </Link> */}
                                                 </div>
                                             ) : (
                                                 <div>
