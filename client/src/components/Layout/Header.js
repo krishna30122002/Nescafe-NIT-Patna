@@ -31,13 +31,18 @@ const Header = () => {
     };
 
     return (
-        <div >
-            <nav className="navbar navbar-expand-lg navbar-light navbar-template" style={{position: "fixed",
-            top: 0,
-            zIndex: 1,
-            width: "100%",
-            paddingTop:"0.7rem",
-            background: "rgb(217 204 204)"}}>
+        <div>
+            <nav
+                className="navbar navbar-expand-lg navbar-light navbar-template"
+                style={{
+                    position: "fixed",
+                    top: 0,
+                    zIndex: 1,
+                    width: "100%",
+                    paddingTop: "0.7rem",
+                    background: "rgb(217 204 204)",
+                }}
+            >
                 <NavLink to="/">
                     <img className="navbar-logo" src={imgLogo} alt="logo" />
                 </NavLink>
@@ -66,27 +71,36 @@ const Header = () => {
                             </NavLink>
                         </li>
                         <li className="nav-item dropdown">
-                            <Link
+                            <NavLink
+                                // add dropdown-toggle to turn on the list
                                 className="nav-link dropdown-toggle"
                                 // to={"/categories"}
-                                id="navbarDropdownMenuLink"
+                                id="navbarDropdown"
+                                role="button"
                                 data-toggle="dropdown"
                                 aria-haspopup="true"
+                                aria-expanded="false"
+                                // after turning on toggle decomment below lines
+
+                                // id="navbarDropdownMenuLink"
+                                // data-toggle="dropdown"
+                                // aria-haspopup="true"
                             >
                                 Categories
-                            </Link>
+                            </NavLink>
                             <ul className="dropdown-menu">
                                 <li>
                                     <Link
                                         className="dropdown-item"
-                                        to={"/categories"}
+                                        to="/categories"
                                     >
                                         All Categories
                                     </Link>
                                 </li>
                                 {categories?.map((c) => (
-                                    <li key={c.id}>
+                                    <li key={c.slug}>
                                         <Link
+                                        key={c._id}
                                             className="dropdown-item"
                                             to={`/category/${c.slug}`}
                                         >
@@ -118,7 +132,6 @@ const Header = () => {
                                 <li className="nav-item dropdown">
                                     <NavLink
                                         className="nav-link dropdown-toggle"
-                                        // to="#"
                                         id="navbarDropdown"
                                         role="button"
                                         data-toggle="dropdown"

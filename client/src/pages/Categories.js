@@ -13,7 +13,7 @@ const Categories = () => {
                         <div className="col-md-3">
                             <Link
                                 className="btn btn-primary category-link"
-                                key={c.id}
+                                key={c._id}
                                 to={`/category/${c.slug}`}
                             >
                                 {c.name}
