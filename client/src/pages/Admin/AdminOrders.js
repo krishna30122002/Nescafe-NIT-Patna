@@ -5,6 +5,7 @@ import moment from 'moment'
 import { useAuth } from "../../context/auth";
 import axios from "axios";
 import { Select } from "antd";
+import ConsoleHelperFrontend from "../../ConsoleHelperFrontend";
 const { Option } = Select;
 
 const AdminOrders = () => {
@@ -26,7 +27,7 @@ const AdminOrders = () => {
             );
             setOrders(data);
         } catch (error) {
-            console.log(error);
+            ConsoleHelperFrontend(error);
         }
     };
     useEffect(() => {
@@ -46,9 +47,9 @@ const AdminOrders = () => {
         try { 
             const {data} = await axios.put(`${process.env.REACT_APP_API}/api/v1/auth/order-status/${orderId}`,{status:value,})
             getOrders();
-            console.log(data);
+            ConsoleHelperFrontend(data);
         } catch (error) {
-            console.log(error)
+            ConsoleHelperFrontend(error)
         }
     }
 

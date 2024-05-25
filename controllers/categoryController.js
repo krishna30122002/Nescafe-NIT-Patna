@@ -1,3 +1,4 @@
+import ConsoleHelperBackend from "../ConsoleHelperBackend.js";
 import categoryModel from "../models/categoryModel.js";
 import slugify from "slugify";
 
@@ -26,7 +27,7 @@ export const createCategoryController = async (req, res) => {
             category,
         });
     } catch (error) {
-        console.log(error);
+        ConsoleHelperBackend(error);
         res.status(500).send({
             success: false,
             message: "Error in fetching category",
@@ -52,7 +53,7 @@ export const updateCategoryController = async (req, res) => {
             category,
         });
     } catch (error) {
-        console.log(error);
+        ConsoleHelperBackend(error);
         res.status(500).send({
             success: false,
             message: "Error while updating category",
@@ -70,7 +71,7 @@ export const getAllCategoryController=async(req,res)=>{
             category
         });
     } catch (error) {
-        console.log(error);
+        ConsoleHelperBackend(error);
         res.status(500).send({
             success: false,
             message: "Error while getting all categories",
@@ -88,7 +89,7 @@ export const getSingleCategoryController=async(req,res)=>{
             category,
         });
     } catch (error) {
-        console.log(error);
+        ConsoleHelperBackend(error);
         res.status(500).send({
             success: false,
             message: "Error while getting all categories",
@@ -106,7 +107,7 @@ export const deleteCategoryController=async(req,res)=>{
             message: "Category deleted successfully",
         });
     } catch (error) {
-        console.log(error);
+        ConsoleHelperBackend(error);
         res.status(500).send({
             success: false,
             message: "Error while deleting category",

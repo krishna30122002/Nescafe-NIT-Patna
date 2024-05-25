@@ -5,7 +5,7 @@ export const hashPassword=async(password)=>{
         const hashPassword=await bcrypt.hash(password,10)
         return hashPassword;
     } catch (error) {
-        console.log(error);
+        ConsoleHelperBackend(error);
     }
 }
 

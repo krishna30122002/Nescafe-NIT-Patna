@@ -4,6 +4,7 @@ import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useCart } from "../context/cart";
+import ConsoleHelperFrontend from "../ConsoleHelperFrontend";
 
 const ProductDetail = () => {
     const params = useParams();
@@ -53,7 +54,7 @@ const ProductDetail = () => {
 
             // getSimilarProduct(data?.product._id, data?.product.category._id);
         } catch (error) {
-            console.log(error);
+            ConsoleHelperFrontend(error);
         }
     };
 
@@ -64,7 +65,7 @@ const ProductDetail = () => {
     //         );
     //         setSimilarProduct(data?.products);
     //     } catch (error) {
-    //         console.log(error);
+    //         ConsoleHelperFrontend(error);
     //     }
     // };
 

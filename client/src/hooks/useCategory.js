@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
+import ConsoleHelperFrontend from "../ConsoleHelperFrontend";
 
 export default function useCategory(){
     const [categories, setCategories]=useState([]);
@@ -8,9 +9,9 @@ export default function useCategory(){
         try {
             const {data} = await axios.get(`${process.env.REACT_APP_API}/api/v1/category/get-category`)
             setCategories(data?.category)
-            console.log(categories)       
+            ConsoleHelperFrontend(categories)       
         } catch (error) {
-            console.log(error)
+            ConsoleHelperFrontend(error)
         }
     }
     useEffect(()=>{

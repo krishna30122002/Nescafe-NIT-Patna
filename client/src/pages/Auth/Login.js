@@ -9,6 +9,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 // import { FiEye, FiEyeOff } from "react-icons/fi";
 import "../../styles/AuthStyles.css";
 import { useAuth } from "../../context/auth";
+import ConsoleHelperFrontend from "../../ConsoleHelperFrontend";
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -43,7 +44,7 @@ const Login = () => {
                 });
             }
         } catch (error) {
-            console.log(error);
+            ConsoleHelperFrontend(error);
             toast.error("Something Went Wrong!", {
                 position: "top-center",
             });

@@ -2,6 +2,7 @@ import React from "react";
 import { useSearch } from "../../context/Search";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import ConsoleHelperFrontend from "../../ConsoleHelperFrontend";
 
 const SearchInput = () => {
     const [values, setValues] = useSearch();
@@ -16,7 +17,8 @@ const SearchInput = () => {
             setValues({ ...values, result: data });
             navigate("/search");
         } catch (error) {
-            console.log(error);
+            
+            ConsoleHelperFrontend(error);
         }
     };
     return (

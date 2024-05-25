@@ -5,6 +5,7 @@ import categoryModel from "../models/categoryModel.js";
 import braintree from "braintree";
 import dotenv from 'dotenv'
 import orderModel from "../models/orderModel.js";
+import ConsoleHelperBackend from "../ConsoleHelperBackend.js";
 
 dotenv.config();
 
@@ -57,7 +58,7 @@ export const createProductController = async (req, res) => {
             products,
         });
     } catch (error) {
-        console.log(error);
+        ConsoleHelperBackend(error);
         res.status(500).send({
             success: false,
             error,
@@ -81,7 +82,7 @@ export const getProductController = async (req, res) => {
             products,
         });
     } catch (error) {
-        console.log(error);
+        ConsoleHelperBackend(error);
         res.status(500).send({
             success: false,
             error,
@@ -102,7 +103,7 @@ export const getSingleProductController = async (req, res) => {
             products,
         });
     } catch (error) {
-        console.log(error);
+        ConsoleHelperBackend(error);
         res.status(500).send({
             success: false,
             error,
@@ -121,7 +122,7 @@ export const getProductPhotoController = async (req, res) => {
             return res.status(200).send(product.photo.data);
         }
     } catch (error) {
-        console.log(error);
+        ConsoleHelperBackend(error);
         res.status(500).send({
             success: false,
             error,
@@ -138,7 +139,7 @@ export const deleteProductController = async (req, res) => {
             message: "Product deleted successfully",
         });
     } catch (error) {
-        console.log(error);
+        ConsoleHelperBackend(error);
         res.status(500).send({
             success: false,
             error,
@@ -192,7 +193,7 @@ export const updateProductController = async (req, res) => {
             products,
         });
     } catch (error) {
-        console.log(error);
+        ConsoleHelperBackend(error);
         res.status(500).send({
             success: false,
             error,
@@ -217,7 +218,7 @@ export const productFilterController = async (req, res) => {
             products,
         });
     } catch (error) {
-        console.log(error);
+        ConsoleHelperBackend(error);
         res.status(400).send({
             success: false,
             error,
@@ -234,7 +235,7 @@ export const productCountController = async (req, res) => {
             total,
         });
     } catch (error) {
-        console.log(error);
+        ConsoleHelperBackend(error);
         res.status(400).send({
             success: false,
             error,
@@ -258,7 +259,7 @@ export const productListController = async (req, res) => {
             products,
         });
     } catch (error) {
-        console.log(error);
+        ConsoleHelperBackend(error);
         res.status(400).send({
             success: false,
             error,
@@ -280,7 +281,7 @@ export const searchProductController = async (req, res) => {
             .select("-photo");
         res.json(result);
     } catch (error) {
-        console.log(error);
+        ConsoleHelperBackend(error);
         res.status(400).send({
             success: false,
             error,
@@ -305,7 +306,7 @@ export const similarProductsController = async (req, res) => {
             products,
         });
     } catch (error) {
-        console.log(error);
+        ConsoleHelperBackend(error);
         res.status(400).send({
             success: false,
             error,
@@ -326,7 +327,7 @@ export const productCategoryController = async (req, res) => {
             products,
         });
     } catch (error) {
-        console.log(error);
+        ConsoleHelperBackend(error);
         res.status(500).send({
             success: false,
             error,
@@ -347,7 +348,7 @@ export const braintreeTokenController = async (req, res) => {
             }
         });
     } catch (error) {
-        console.log(error);
+        ConsoleHelperBackend(error);
     }
 };
 
@@ -377,6 +378,6 @@ export const braintreePaymentController = async (req, res) => {
         }
     )
     } catch (error) {
-        console.log(error);
+        ConsoleHelperBackend(error);
     }
 };

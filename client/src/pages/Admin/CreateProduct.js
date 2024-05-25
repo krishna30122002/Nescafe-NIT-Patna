@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { Select } from "antd";
 import { useNavigate } from "react-router-dom";
+import ConsoleHelperFrontend from "../../ConsoleHelperFrontend";
 
 const CreateProduct = () => {
     useEffect(() => {
@@ -36,7 +37,7 @@ const CreateProduct = () => {
                 setCategories(data?.category);
             }
         } catch (error) {
-            console.log(error);
+            ConsoleHelperFrontend(error);
             toast.error("Something went wrong");
         }
     };
@@ -66,7 +67,7 @@ const CreateProduct = () => {
                 toast.success("Product created successfully!");
             }
         } catch (error) {
-            console.log(error);
+            ConsoleHelperFrontend(error);
             toast.error("Something went wrong!");
         }
     };

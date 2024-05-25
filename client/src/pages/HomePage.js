@@ -6,6 +6,7 @@ import { Checkbox, Radio } from "antd";
 import toast from "react-hot-toast";
 import { Prices } from "../components/Prices.js";
 import { useCart } from "../context/cart.js";
+import ConsoleHelperFrontend from "../ConsoleHelperFrontend.js";
 
 const HomePage = () => {
     const [cart, setCart] = useCart();
@@ -27,7 +28,7 @@ const HomePage = () => {
                 setCategories(data.category);
             }
         } catch (error) {
-            console.log(error);
+            ConsoleHelperFrontend(error);
             toast.error("Something went wrong");
         }
     };
@@ -43,12 +44,12 @@ const HomePage = () => {
             const { data } = await axios.get(
                 `${process.env.REACT_APP_API}/api/v1/product/product-list/${page}`
             );
-            console.log(data);
+            ConsoleHelperFrontend(data);
             setLoading(false);
             setProducts(data.products);
         } catch (error) {
             setLoading(false);
-            console.log(error);
+            ConsoleHelperFrontend(error);
         }
     };
 
@@ -59,7 +60,7 @@ const HomePage = () => {
             );
             setTotal(data?.total);
         } catch (error) {
-            console.log(error);
+            ConsoleHelperFrontend(error);
         }
     };
 
@@ -78,7 +79,7 @@ const HomePage = () => {
             setLoading(false);
             setProducts([...products, ...data?.products]);
         } catch (error) {
-            console.log(error);
+            ConsoleHelperFrontend(error);
             setLoading(false);
         }
     };
@@ -111,7 +112,7 @@ const HomePage = () => {
             );
             setProducts(data?.products);
         } catch (error) {
-            console.log(error);
+            ConsoleHelperFrontend(error);
         }
     };
 

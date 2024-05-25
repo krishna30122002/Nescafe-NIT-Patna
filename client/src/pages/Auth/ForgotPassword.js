@@ -8,6 +8,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 // import { FiEye, FiEyeOff } from "react-icons/fi";
 import "../../styles/AuthStyles.css";
+import ConsoleHelperFrontend from "../../ConsoleHelperFrontend";
 
 const ForgotPassword = () => {
     const [email, setEmail] = useState("");
@@ -35,7 +36,7 @@ const ForgotPassword = () => {
                 });
             }
         } catch (error) {
-            console.log(error);
+            ConsoleHelperFrontend(error);
             toast.error("Something Went Wrong!", {
                 position: "top-center",
             });
