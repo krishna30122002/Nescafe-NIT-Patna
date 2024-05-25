@@ -4,6 +4,7 @@ import AdminMenu from "../../components/Layout/AdminMenu";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import ConsoleHelperFrontend from "../../ConsoleHelperFrontend";
 
 const Products = () => {
     useEffect(() => {
@@ -24,7 +25,7 @@ const Products = () => {
             );
             setProducts(data.products);
         } catch (error) {
-            console.log(error);
+            ConsoleHelperFrontend(error);
             toast.error("Something went wrong");
         }
     };

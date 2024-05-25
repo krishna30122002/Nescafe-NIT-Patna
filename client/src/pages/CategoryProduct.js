@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Layout from "../components/Layout/Layout";
 import axios from "axios";
 import { useParams, Link, NavLink } from "react-router-dom";
+import ConsoleHelperFrontend from "../ConsoleHelperFrontend";
 
 const CategoryProduct = () => {
     const [products, setProducts] = useState([]);
@@ -35,7 +36,7 @@ const CategoryProduct = () => {
             setProducts(data?.products);
             setCategory(data?.category);
         } catch (error) {
-            console.log(error);
+            ConsoleHelperFrontend(error);
         }
     };
     return (

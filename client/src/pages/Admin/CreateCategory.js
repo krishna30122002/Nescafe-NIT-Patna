@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import CategoryForm from "../../components/Form/CategoryForm";
 import { Modal } from "antd";
+import ConsoleHelperFrontend from "../../ConsoleHelperFrontend";
 
 const CreateCategory = () => {
     useEffect(() => {
@@ -36,7 +37,7 @@ const CreateCategory = () => {
                 toast.error(data.message);
             }
         } catch (error) {
-            console.log(error);
+            ConsoleHelperFrontend(error);
             toast.error("Something went wrong");
         }
     };
@@ -50,7 +51,7 @@ const CreateCategory = () => {
                 setCategories(data.category);
             }
         } catch (error) {
-            console.log(error);
+            ConsoleHelperFrontend(error);
             toast.error("Something went wrong");
         }
     };
@@ -76,7 +77,7 @@ const CreateCategory = () => {
                 toast.error(data.message);
             }
         } catch (error) {
-            console.log(error);
+            ConsoleHelperFrontend(error);
             toast.error("Something went wrong");
         }
     };
@@ -94,7 +95,7 @@ const CreateCategory = () => {
                 toast.error(data.message);
             }
         } catch (error) {
-            console.log(error);
+            ConsoleHelperFrontend(error);
             toast.error("Something went wrong");
         }
     };

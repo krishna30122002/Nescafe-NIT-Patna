@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import DropIn from "braintree-web-drop-in-react";
 import axios from "axios";
 import toast from "react-hot-toast";
+import ConsoleHelperFrontend from "../ConsoleHelperFrontend";
 
 const CartPage = () => {
     const navigate = useNavigate();
@@ -28,7 +29,7 @@ const CartPage = () => {
             localStorage.setItem("cart", JSON.stringify(mycart));
             setCart(mycart);
         } catch (error) {
-            console.log(error);
+            ConsoleHelperFrontend(error);
         }
     };
 
@@ -49,7 +50,7 @@ const CartPage = () => {
                 myObj
             );
         } catch (error) {
-            console.log(error);
+            ConsoleHelperFrontend(error);
         }
     };
 
@@ -61,7 +62,7 @@ const CartPage = () => {
             );
             setClientToken(data?.clientToken);
         } catch (error) {
-            console.log(error);
+            ConsoleHelperFrontend(error);
         }
     };
     useEffect(() => {
@@ -87,7 +88,7 @@ const CartPage = () => {
             navigate("/dashboard/user/orders");
             toast.success("Payment Successful");
         } catch (error) {
-            console.log(error);
+            ConsoleHelperFrontend(error);
             setLoading(false);
         }
     };

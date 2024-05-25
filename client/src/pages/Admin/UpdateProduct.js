@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { Select } from "antd";
 import { useNavigate, useParams } from "react-router-dom";
+import ConsoleHelperFrontend from "../../ConsoleHelperFrontend";
 
 const UpdateProduct = () => {
     useEffect(() => {
@@ -41,7 +42,7 @@ const UpdateProduct = () => {
             setPrice(data.products.price);
             setQuantity(data.products.quantity);
         } catch (error) {
-            console.log(error);
+            ConsoleHelperFrontend(error);
         }
     };
 
@@ -59,7 +60,7 @@ const UpdateProduct = () => {
                 setCategories(data.category);
             }
         } catch (error) {
-            console.log(error);
+            ConsoleHelperFrontend(error);
             toast.error("Something went wrong");
         }
     };
@@ -89,7 +90,7 @@ const UpdateProduct = () => {
                 navigate("/dashboard/admin/products");
             }
         } catch (error) {
-            console.log(error);
+            ConsoleHelperFrontend(error);
             toast.error("Something went wrong!");
         }
     };
@@ -106,7 +107,7 @@ const UpdateProduct = () => {
                 navigate("/dashboard/admin/products");
             }
         } catch (error) {
-            console.log(error);
+            ConsoleHelperFrontend(error);
             toast.error("Something went wrong");
         }
     };

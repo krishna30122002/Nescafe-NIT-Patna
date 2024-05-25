@@ -2,6 +2,7 @@ import { comparePassword, hashPassword } from "../helpers/authHelper.js";
 import userModel from "../models/userModel.js";
 import orderModel from "../models/orderModel.js";
 import JWT from "jsonwebtoken";
+import ConsoleHelperBackend from "../ConsoleHelperBackend.js";
 
 export const registerController = async (req, res) => {
     try {
@@ -45,7 +46,7 @@ export const registerController = async (req, res) => {
             user,
         });
     } catch (error) {
-        console.log(error);
+        ConsoleHelperBackend(error);
         res.status(500).send({
             success: false,
             message: "Error in Registration",
@@ -132,7 +133,7 @@ export const forgotPasswordController = async (req, res) => {
             message: "Password Reset Successfully",
         });
     } catch (error) {
-        console.log(error);
+        ConsoleHelperBackend(error);
         res.status(500).send({
             success: false,
             message: "Something went wrong!",
@@ -145,7 +146,7 @@ export const testController = (req, res) => {
     try {
         res.send("Protected Route");
     } catch (error) {
-        console.log(error);
+        ConsoleHelperBackend(error);
         res.send({ error });
     }
 };
@@ -178,7 +179,7 @@ export const updateProfileController = async (req, res) => {
             updatedUser,
         });
     } catch (error) {
-        console.log(error);
+        ConsoleHelperBackend(error);
         res.status(400).send({
             success: false,
             message: "Error while updating profile",
@@ -195,7 +196,7 @@ export const getOrdersController = async (req, res) => {
             .populate("buyer", "name");
         res.json(orders);
     } catch (error) {
-        console.log(error);
+        ConsoleHelperBackend(error);
         res.status(500).send({
             success: false,
             message: "Error while getting user orders",
@@ -213,7 +214,7 @@ export const getAllOrdersController = async (req, res) => {
             .sort({ createdAt: -1 }); 
         res.json(orders);
     } catch (error) {
-        console.log(error);
+        ConsoleHelperBackend(error);
         res.status(500).send({
             success: false,
             message: "Error while getting user orders",
@@ -229,7 +230,7 @@ export const orderStatusController=async(req,res)=>{
         const orders=await orderModel.findByIdAndUpdate(orderId, {status}, {new:true})
         res.json(orders)
     } catch (error) {
-        console.log(error)
+        ConsoleHelperBackend(error)
         res.status(500).send({
             success:false,
             message:'Error while updating order status',

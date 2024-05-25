@@ -4,6 +4,7 @@ import UserMenu from "../../components/Layout/UserMenu";
 import axios from "axios";
 import { useAuth } from "../../context/auth";
 import moment from "moment";
+import ConsoleHelperFrontend from "../../ConsoleHelperFrontend";
 
 const Orders = () => {
     const [auth] = useAuth();
@@ -25,7 +26,7 @@ const Orders = () => {
             );
             setOrders(data);
         } catch (error) {
-            console.log(error);
+            ConsoleHelperFrontend(error);
         }
     };
     useEffect(() => {

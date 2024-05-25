@@ -4,6 +4,7 @@ import UserMenu from "../../components/Layout/UserMenu";
 import { useAuth } from "../../context/auth";
 import toast from "react-hot-toast";
 import axios from "axios";
+import ConsoleHelperFrontend from "../../ConsoleHelperFrontend";
 
 const Profile = () => {
     const [auth, setAuth] = useAuth();
@@ -52,7 +53,7 @@ const Profile = () => {
                 });
             }
         } catch (error) {
-            console.log(error);
+            ConsoleHelperFrontend(error);
             toast.error("Something Went Wrong!", {
                 position: "top-center",
             });
