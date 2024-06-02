@@ -2,14 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 /* font-family: "Josefin Sans", sans-serif; */
 
-.footer-section {
-    padding: 0rem;
-    margin: 0;
-}
 
-.footer-container {
-    position: relative;
-}
+
 
 .nav-item {
     font-family: "Josefin Sans", sans-serif;
@@ -58,14 +52,3 @@
     transform: scale(1.2);
 }
 
-.footer-comp {
-    align-items: normal;
-    justify-content: space-around;
-    padding-left: 0.4rem;
-    padding-right: 0.4rem;
-}
-
-.footer-comp:hover {
-    color: black;
-    text-decoration: underline;
-}

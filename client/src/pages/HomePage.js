@@ -135,9 +135,9 @@ const HomePage = () => {
                                 </Checkbox>
                             ))}
                         </div>
-                        <h3 className="text-center mt-5">Filter by Price</h3>
-                        <p className="text-center">(Slight Error; Will fix it furthur)</p>
-                        <div className="d-flex flex-column">
+                        <h3 className="text-center mt-5 filter-price">Filter by Price</h3>
+                        <p className="text-center filter-price">(Slight Error; Will fix it furthur)</p>
+                        <div className="d-flex flex-column filter-price">
                             <Radio.Group
                                 onChange={(e) => setRadio(e.target.value)}
                                 className="list-group-admin category-filter category-filter"
