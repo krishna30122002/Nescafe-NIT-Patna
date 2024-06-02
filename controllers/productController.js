@@ -210,7 +210,7 @@ export const productFilterController = async (req, res) => {
             args.category = checked;
         }
         if (radio.length) {
-            args.prices = { $gte: radio[0], $lte: radio[1] };
+            args.price = { $gte: radio[0], $lte: radio[1] };
         }
         const products = await productModel.find(args);
         res.status(200).send({

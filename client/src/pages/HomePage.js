@@ -89,7 +89,7 @@ const HomePage = () => {
         if (val) {
             all.push(id);
         } else {
-            all = all.filter((item) => item !== id);
+            all = all.filter((c) => c !== id);
         }
         setChecked(all);
     };
@@ -135,8 +135,9 @@ const HomePage = () => {
                                 </Checkbox>
                             ))}
                         </div>
-                        <h3 className="text-center mt-5">Filter by Price</h3>
-                        <div className="d-flex flex-column">
+                        <h3 className="text-center mt-5 filter-price">Filter by Price</h3>
+                        <p className="text-center filter-price">(Slight Error; Will fix it furthur)</p>
+                        <div className="d-flex flex-column filter-price">
                             <Radio.Group
                                 onChange={(e) => setRadio(e.target.value)}
                                 className="list-group-admin category-filter category-filter"
@@ -166,7 +167,6 @@ const HomePage = () => {
                     <div className="col-md-9 dashboard-content parent-wrapper">
                         {/* {JSON.stringify(checked, null, 4)} */}
                         <h1 className="text-center">All Products</h1>
-                        {/* <h1 className="text-underline">Products</h1> */}
                         <div className="d-flex parent">
                             {products?.map((p) => (
                                 <Link

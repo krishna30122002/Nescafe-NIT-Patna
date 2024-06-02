@@ -22,7 +22,6 @@ const Layout = ({ children, title, description, keywords, author }) => {
                 <Toaster />
                 {children}
             </main>
-
             <Footer />
         </div>
     );
