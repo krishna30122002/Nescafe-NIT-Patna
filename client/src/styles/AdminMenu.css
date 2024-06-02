@@ -1,0 +1,9 @@
+.list-group-admin {
+    border: 0.1rem solid #474d52;
+    border-radius: 0.45rem;
+    margin: 0.9rem 0.55rem;
+}
+
+.list-group-item-admin:hover {
+    background-color: #ffdee9;
+}

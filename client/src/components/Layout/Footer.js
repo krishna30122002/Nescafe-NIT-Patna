@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FiGithub, FiLinkedin, FiFacebook, FiInstagram } from "react-icons/fi";
-import "../../styles/AuthStyles.css";
+import '../../styles/Footer.css'
 
 const Footer = () => {
     return (

@@ -2,12 +2,8 @@ import React from "react";
 import Layout from "../../components/Layout/Layout";
 import { useState } from "react";
 import toast from "react-hot-toast";
-// import { toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-// import { FiEye, FiEyeOff } from "react-icons/fi";
-import "../../styles/AuthStyles.css";
 import ConsoleHelperFrontend from "../../ConsoleHelperFrontend";
 
 const ForgotPassword = () => {

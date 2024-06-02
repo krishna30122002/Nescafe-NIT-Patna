@@ -1,0 +1,123 @@
+.nav-item {
+    transition: transform 0.2s ease;
+    font-size: 1.10rem;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.nav-item:hover {
+    transform: scale(0.05);
+    border-bottom: 0.05rem solid black;
+}
+
+.navbar {
+    position: relative;
+    box-shadow: 0 0.5rem 0.4rem -0.4rem gray !important;
+    border-bottom: 0.05rem solid gray !important;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.4rem;
+}
+
+.navbar-brand {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.navbar-logo {
+    width: 4rem;
+    margin-left: 2rem;
+    transform: scale(1.5)
+}
+
+.navbar-logo {
+    transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover {
+    transform: scale(1.8);
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.nav-item:hover {
+    transform: scale(1.1);
+    color: black;
+    font-weight: 600;
+}
+
+.navbar-nav {
+    margin-right: 1rem;
+    gap: 1rem;
+}
+
+.nitplogo {
+    transition: transform 0.3s ease;
+    height: 2.75rem;
+    width: 2.75rem;
+}
+
+.nitplogo:hover {
+    transform: scale(1.1);
+}
+
+.social:hover {
+    transform: scale(1.2);
+}
+
+@media (max-width: 480px) {
+    .navbar {
+      box-shadow: none !important;
+      border-bottom: 0.05rem solid gray !important;
+      border-radius: 0;
+      padding: 0.5rem 1rem;
+    }
+  
+    .nav-item {
+      font-size: 1rem;
+      display: block;
+      text-align: center;
+      padding: 0.5rem 0;
+      margin: 0.5rem 0;
+    }
+  
+    .nav-item:hover {
+      transform: none;
+      border-bottom: 0.05rem solid black;
+    }
+  
+    .navbar-brand {
+      font-size: 1.5rem;
+      text-align: center;
+      display: block;
+      width: 100%;
+    }
+  }
+  
+
+
+
+
+  .list-group-admin-homepage {
+    border: 0.1rem solid #474d52;
+    border-radius: 0.45rem;
+    margin: 0.9rem 0.55rem;
+  }
+
+
+.parent-wrapper-homepage{
+    min-width: auto;
+}
+
+.dashboard-content-homepage {
+    margin: 0.9rem 0.55rem;
+    max-width: 69rem;
+    border: 0.1rem solid #474d52;
+    border-radius: 0.55rem;
+    padding: 1rem 0.5rem;
+    padding-left: 1rem;
+  }

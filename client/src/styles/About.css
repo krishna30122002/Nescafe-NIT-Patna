@@ -1,0 +1,74 @@
+.contact-cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 75vh;
+  }
+  
+  .contact-cont .card {
+    color: white;
+    background-color: black;
+  }
+  
+  .cont-content {
+    border: 1px solid black;
+    padding: 0;
+    border-radius: 0.5rem;
+    font-size: 1.15rem;
+  }
+  
+  .cont-content h1 {
+    border: 1px solid black;
+    padding: 0;
+    border-bottom-left-radius: 0rem;
+    border-bottom-right-radius: 0rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+  }
+  
+  .about-content h1 {
+    border: 1px solid black;
+    padding: 0;
+    border-bottom-left-radius: 0rem;
+    border-bottom-right-radius: 0rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+  }
+  
+  .content-comp-title {
+    font-weight: bold;
+    margin-left: 1rem;
+  }
+  
+  .content-comp {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  
+  .about-content {
+    border: 1px solid black;
+    padding: 0;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  
+  .about-comp-title {
+    font-weight: bold;
+    margin-left: 1rem;
+  }
+  
+  .about-comp {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  
+  .cont-about {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  
+  .about-me {
+    height: 35rem;
+    width: 20rem;
+  }

@@ -6,6 +6,7 @@ import axios from "axios";
 import { Select } from "antd";
 import { useNavigate, useParams } from "react-router-dom";
 import ConsoleHelperFrontend from "../../ConsoleHelperFrontend";
+import '../../styles/UpdateProduct.css'
 
 const UpdateProduct = () => {
     useEffect(() => {
@@ -119,7 +120,7 @@ const UpdateProduct = () => {
                     <div className="col-md-3 dashboard-menu">
                         <AdminMenu />
                     </div>
-                    <div className="col-md-9 dashboard-content">
+                    <div className="col-md-9 dashboard-content-updateproduct">
                         <h1 className="text-center">Update Products</h1>
                         <div>
                             <Select

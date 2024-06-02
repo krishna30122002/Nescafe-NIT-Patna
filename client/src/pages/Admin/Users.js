@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Layout from "../../components/Layout/Layout";
 import AdminMenu from "../../components/Layout/AdminMenu";
+import '../../styles/Users.css'
 
 const Users = () => {
     useEffect(() => {
@@ -19,7 +20,7 @@ const Users = () => {
                         <div className="col-md-3 dashboard-menu">
                             <AdminMenu />
                         </div>
-                        <div className="col-md-9 dashboard-content"></div>
+                        <div className="col-md-9 dashboard-content-users"></div>
                     </div>
                 </div>
             

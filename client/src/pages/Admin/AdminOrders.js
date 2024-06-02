@@ -6,6 +6,8 @@ import { useAuth } from "../../context/auth";
 import axios from "axios";
 import { Select } from "antd";
 import ConsoleHelperFrontend from "../../ConsoleHelperFrontend";
+import '../../styles/AdminOrders.css'
+
 const { Option } = Select;
 
 const AdminOrders = () => {
@@ -60,7 +62,7 @@ const AdminOrders = () => {
                     <div className="col-md-3 dashboard-menu">
                         <AdminMenu />
                     </div>
-                    <div className="col-md-9 dashboard-content">
+                    <div className="col-md-9 dashboard-content-admin-orders">
                         <h1 className="text-center">All Orders</h1>
                         {orders?.map((order, idx) => {
                             return (

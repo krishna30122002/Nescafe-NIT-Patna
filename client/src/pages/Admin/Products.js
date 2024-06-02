@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import ConsoleHelperFrontend from "../../ConsoleHelperFrontend";
+import '../../styles/Products.css'
 
 const Products = () => {
     useEffect(() => {
@@ -41,7 +42,7 @@ const Products = () => {
                     <div className="col-md-3 dashboard-menu">
                         <AdminMenu />
                     </div>
-                    <div className="col-md-9 dashboard-content parent-wrapper">
+                    <div className="col-md-9 dashboard-content-products parent-wrapper-products">
                         <h1 className="text-center">All Products</h1>
                         <div className="d-flex parent">
                             {products?.map((p) => (
