@@ -6,3 +6,15 @@
     padding: 1rem 0.5rem;
     padding-left: 1rem;
   }
+
+  .product-img-orders-admin {
+    height: 11rem;
+    width: 11rem;
+  }
+
+  .container-orders-admin {
+    /* padding: 0.5rem; */
+    border-radius: 0.5rem;
+    border: 2px dashed black;
+    margin: 1rem 0.5rem;
+  }

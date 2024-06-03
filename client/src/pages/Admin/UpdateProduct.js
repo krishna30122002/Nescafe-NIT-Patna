@@ -128,7 +128,7 @@ const UpdateProduct = () => {
                                 placeholder="Select a category"
                                 size="larger"
                                 showSearch
-                                className="form-select mb-3 col-md-12 category-search"
+                                className="form-select mb-3 col-md-12 category-search-update"
                                 onChange={(value) => {
                                     setCategory(value);
                                 }}
@@ -234,7 +234,7 @@ const UpdateProduct = () => {
                                             border: "0.15rem solid #ffdee9",
                                             height: "2.5rem",
                                         }}
-                                        className="btn btn-category product-delete-btn"
+                                        className="btn btn-update product-delete-btn"
                                         onClick={() => handleDelete()}
                                     >
                                         Delete

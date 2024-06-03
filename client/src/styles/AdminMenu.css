@@ -7,3 +7,10 @@
 .list-group-item-admin:hover {
     background-color: #ffdee9;
 }
+
+.list-group-item.active {
+    z-index: 2;
+    color: black;
+    background-color: #ffdee9;
+    border-color: #ffdee9;
+  }

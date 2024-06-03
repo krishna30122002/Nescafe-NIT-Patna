@@ -1,8 +1,7 @@
 import React from "react";
+import "../../styles/CategoryForm.css";
 
 const CategoryForm = ({ handleSubmit, value, setValue }) => {
-    
-    
     return (
         <>
             <form onSubmit={handleSubmit}>
@@ -13,7 +12,10 @@ const CategoryForm = ({ handleSubmit, value, setValue }) => {
                     value={value}
                     onChange={(e) => setValue(e.target.value)}
                 />
-                <button type="submit" className="btn btn-primary category-submit">
+                <button
+                    type="submit"
+                    className="btn btn-primary category-submit"
+                >
                     Submit
                 </button>
             </form>

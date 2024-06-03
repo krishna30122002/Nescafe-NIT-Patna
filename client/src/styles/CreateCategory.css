@@ -1,8 +1,67 @@
 .dashboard-content-createcategory {
-    margin: 0.9rem 0.55rem;
-    max-width: 69rem;
-    border: 0.1rem solid #474d52;
-    border-radius: 0.55rem;
-    padding: 1rem 0.5rem;
-    padding-left: 1rem;
-  }
+  margin: 0.9rem 0.55rem;
+  max-width: 69rem;
+  border: 0.1rem solid #474d52;
+  border-radius: 0.55rem;
+  padding: 1rem 0.5rem;
+  padding-left: 1rem;
+}
+
+.table-row-category {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.col-category-c1 {
+  margin-left: 0;
+}
+
+.col-category-c2 {
+  /* margin-top: 5rem; */
+  margin-left: 55rem;
+}
+
+.btn-category {
+  display: flex;
+  flex-direction: column;
+  flex: 0;
+  position: relative;
+  right: 5rem;
+  border-radius: 0.5rem;
+  background-color: #ffdee9;
+  color: #474d52;
+  border: 0.1rem solid #474d52;
+  transition: all linear 0.1s;
+  transform: scale(1.0);
+  margin-top: 0.5rem;
+}
+
+.btn-category:hover {
+  color: #ffdee9;
+  background-color: #474d52;
+  border-color: #474d52;
+  transform: scale(0.95);
+  background-color: #474d52;
+  color: #ffdee9;
+  box-shadow: inset;
+}
+
+.btn-category-danger {
+  background-color: black;
+}
+
+.table-data-row-data {
+  margin-top: 1rem;
+}
+
+.table-data-1 {
+  display: flex;
+  gap: 1rem;
+}
+
+
+.table-data-1 .btn-category-danger {
+  background-color: black;
+}

@@ -88,7 +88,7 @@ const CreateProduct = () => {
                                 placeholder="Select a category"
                                 size="larger"
                                 showSearch
-                                className="form-select mb-3 col-md-12 category-search"
+                                className="form-select mb-3 col-md-12 category-search-product"
                                 onChange={(value) => {
                                     setCategory(value);
                                 }}

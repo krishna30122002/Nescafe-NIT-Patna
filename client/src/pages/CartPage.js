@@ -149,7 +149,7 @@ const CartPage = () => {
                                     <h5>Price: ₹ {p.price}</h5>
                                     <div className="d-flex flex-row">
                                         <button
-                                            className="btn btn-login-pass btn-category btn-cart"
+                                            className="btn btn-login-pass btn-cartpage btn-cart"
                                             style={{
                                                 border: "0.125rem solid #ffdee9",
                                                 marginTop: "-0.2rem",

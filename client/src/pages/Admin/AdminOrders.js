@@ -66,7 +66,7 @@ const AdminOrders = () => {
                         <h1 className="text-center">All Orders</h1>
                         {orders?.map((order, idx) => {
                             return (
-                                <div className="shadow container-orders">
+                                <div className="shadow container-orders-admin">
                                     <table class="table container-table">
                                         <thead className="container-table-head">
                                             <tr>
@@ -119,7 +119,7 @@ const AdminOrders = () => {
                                             >
                                                 <div className="col-md-4 mt-1 image-orders">
                                                     <img
-                                                        className="card-img-top product-img-orders"
+                                                        className="card-img-top product-img-orders-admin"
                                                         src={`${process.env.REACT_APP_API}/api/v1/product/product-photo/${p._id}`}
                                                         alt={p.name}
                                                     />

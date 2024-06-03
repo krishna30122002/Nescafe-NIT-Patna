@@ -3,6 +3,7 @@ import { useSearch } from "../../context/Search";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import ConsoleHelperFrontend from "../../ConsoleHelperFrontend";
+import '../../styles/Search.css'
 
 const SearchInput = () => {
     const [values, setValues] = useSearch();

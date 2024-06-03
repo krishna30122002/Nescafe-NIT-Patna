@@ -81,7 +81,7 @@ const ProductDetail = () => {
                     />
                 </div>
                 <div className="col-md-9 dashboard-content-product m-5 p-3">
-                    <h3 className="text-center text-underline">Item Details</h3>
+                    <h3 className="text-center text-underline-detail">Item Details</h3>
                     <h5>Name -: {product.name}</h5>
                     <h5>Description -: {product.description}</h5>
                     <h5>Category -: {category}</h5>
