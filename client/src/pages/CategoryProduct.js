@@ -3,6 +3,7 @@ import Layout from "../components/Layout/Layout";
 import axios from "axios";
 import { useParams, Link, NavLink } from "react-router-dom";
 import ConsoleHelperFrontend from "../ConsoleHelperFrontend";
+import '../styles/CategoryProduct.css'
 
 const CategoryProduct = () => {
     const [products, setProducts] = useState([]);
@@ -43,11 +44,11 @@ const CategoryProduct = () => {
         <Layout>
             <div className="container mt-3 mb-2">
                 <h1 className="text-center">Category -: {category?.name}</h1>
-                <h3 className="text-center text-underline">
+                <h3 className="text-center text-underline-product">
                     {products?.length} results found
                 </h3>
                 <div className="row">
-                    <div className="col-md-9 dashboard-content parent-wrapper">
+                    <div className="col-md-9 dashboard-content-categoryproduct">
                         {/* {JSON.stringify(checked, null, 4)} */}
                         <h3 className="m-2 mb-3">Products:</h3>
                         <div className="d-flex parent">

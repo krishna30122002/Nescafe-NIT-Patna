@@ -6,6 +6,7 @@ import axios from "axios";
 import CategoryForm from "../../components/Form/CategoryForm";
 import { Modal } from "antd";
 import ConsoleHelperFrontend from "../../ConsoleHelperFrontend";
+import '../../styles/CreateCategory.css'
 
 const CreateCategory = () => {
     useEffect(() => {
@@ -106,7 +107,7 @@ const CreateCategory = () => {
                     <div className="col-md-3 dashboard-menu">
                         <AdminMenu />
                     </div>
-                    <div className="col-md-9 dashboard-content">
+                    <div className="col-md-9 dashboard-content-createcategory">
                         <h1 className="text-center">Manage Categories</h1>
                         <div className="p-3">
                             <CategoryForm

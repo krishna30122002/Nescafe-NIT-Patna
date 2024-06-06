@@ -1,0 +1,16 @@
+.list-group-admin {
+    border: 0.1rem solid #474d52;
+    border-radius: 0.45rem;
+    margin: 0.9rem 0.55rem;
+}
+
+.list-group-item-admin:hover {
+    background-color: #ffdee9;
+}
+
+.list-group-item.active {
+    z-index: 2;
+    color: black;
+    background-color: #ffdee9;
+    border-color: #ffdee9;
+  }

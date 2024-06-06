@@ -7,6 +7,7 @@ import toast from "react-hot-toast";
 import { Prices } from "../components/Prices.js";
 import { useCart } from "../context/cart.js";
 import ConsoleHelperFrontend from "../ConsoleHelperFrontend.js";
+import '../styles/HomePage.css'
 
 const HomePage = () => {
     const [cart, setCart] = useCart();
@@ -118,11 +119,11 @@ const HomePage = () => {
 
     return (
         <Layout title="All Products | Nescafé">
-            <div className="row">
+            <div className="row homepage-container">
                 <div className="row mt-3 d-flex flex-column">
                     <div className="col-md-3 dashboard-menu-category">
                         <h3 className="text-center mt-3">Filter by Category</h3>
-                        <div className="d-flex flex-column list-group-admin category-filter">
+                        <div className="d-flex flex-column list-group-admin-homepage category-filter">
                             {categories?.map((c) => (
                                 <Checkbox
                                     className="category-filter-category"
@@ -140,7 +141,7 @@ const HomePage = () => {
                         <div className="d-flex flex-column filter-price">
                             <Radio.Group
                                 onChange={(e) => setRadio(e.target.value)}
-                                className="list-group-admin category-filter category-filter"
+                                className="list-group-admin-homepage category-filter category-filter"
                             >
                                 {Prices?.map((p) => (
                                     <div key={p._id}>
@@ -164,7 +165,7 @@ const HomePage = () => {
                         </div>
                     </div>
 
-                    <div className="col-md-9 dashboard-content parent-wrapper">
+                    <div className="col-md-9 dashboard-content-homepage parent-wrapper-homepage">
                         {/* {JSON.stringify(checked, null, 4)} */}
                         <h1 className="text-center">All Products</h1>
                         <div className="d-flex parent">

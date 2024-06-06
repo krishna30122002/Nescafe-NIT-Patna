@@ -9,6 +9,7 @@ import DropIn from "braintree-web-drop-in-react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import ConsoleHelperFrontend from "../ConsoleHelperFrontend";
+import '../styles/CartPage.css'
 
 const CartPage = () => {
     const navigate = useNavigate();
@@ -108,7 +109,7 @@ const CartPage = () => {
                     </h4>
                 </div>
                 <div className="row cart-">
-                    <div className="col md-6 dashboard-content ">
+                    <div className="col md-6 dashboard-content-cartpage ">
                         <h2
                             className="margin-of-cart text-center"
                             style={{
@@ -148,7 +149,7 @@ const CartPage = () => {
                                     <h5>Price: ₹ {p.price}</h5>
                                     <div className="d-flex flex-row">
                                         <button
-                                            className="btn btn-login-pass btn-category btn-cart"
+                                            className="btn btn-login-pass btn-cartpage btn-cart"
                                             style={{
                                                 border: "0.125rem solid #ffdee9",
                                                 marginTop: "-0.2rem",
@@ -165,7 +166,7 @@ const CartPage = () => {
                             </div>
                         ))}
                     </div>
-                    <div className="col-md-6 dashboard-content text-center">
+                    <div className="col-md-6 dashboard-content-cartpage text-center">
                         <h2
                             className="margin-of-cart"
                             style={{

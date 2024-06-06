@@ -6,6 +6,7 @@ import axios from "axios";
 import { Select } from "antd";
 import { useNavigate } from "react-router-dom";
 import ConsoleHelperFrontend from "../../ConsoleHelperFrontend";
+import '../../styles/CreateProduct.css'
 
 const CreateProduct = () => {
     useEffect(() => {
@@ -79,7 +80,7 @@ const CreateProduct = () => {
                     <div className="col-md-3 dashboard-menu">
                         <AdminMenu />
                     </div>
-                    <div className="col-md-9 dashboard-content">
+                    <div className="col-md-9 dashboard-content-createproduct">
                         <h1 className="text-center">Create Products</h1>
                         <div>
                             <Select
@@ -87,7 +88,7 @@ const CreateProduct = () => {
                                 placeholder="Select a category"
                                 size="larger"
                                 showSearch
-                                className="form-select mb-3 col-md-12 category-search"
+                                className="form-select mb-3 col-md-12 category-search-product"
                                 onChange={(value) => {
                                     setCategory(value);
                                 }}

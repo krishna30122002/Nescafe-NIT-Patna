@@ -5,6 +5,7 @@ import { useAuth } from "../../context/auth";
 import toast from "react-hot-toast";
 import axios from "axios";
 import ConsoleHelperFrontend from "../../ConsoleHelperFrontend";
+import "../../styles/Profile.css";
 
 const Profile = () => {
     const [auth, setAuth] = useAuth();
@@ -66,7 +67,7 @@ const Profile = () => {
                     <div className="col-md-3 dashboard-menu">
                         <UserMenu />
                     </div>
-                    <div className="col-md-9 dashboard-content">
+                    <div className="col-md-9 dashboard-content-profile">
                         <div className="form-container">
                             <form onSubmit={handleSubmit}>
                                 <h2 className="text-center m-2 mb-4">

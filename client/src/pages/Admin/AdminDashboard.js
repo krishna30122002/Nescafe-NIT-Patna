@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Layout from "../../components/Layout/Layout";
 import AdminMenu from "../../components/Layout/AdminMenu";
 import { useAuth } from "../../context/auth";
+import '../../styles/AdminDashboard.css'
 
 const AdminDashboard = () => {
     const [auth] = useAuth();
@@ -23,7 +24,7 @@ const AdminDashboard = () => {
                     <div className="col-md-3 dashboard-menu">
                         <AdminMenu />
                     </div>
-                    <div className="col-md-9 dashboard-content">
+                    <div className="col-md-9 dashboard-content-admin">
                         <h3>Name: {auth?.user?.name}</h3>
                         <h5>Email: {auth?.user?.email}</h5>
                         <h5>Phone: {auth?.user?.phone}</h5>

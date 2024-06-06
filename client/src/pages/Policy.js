@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "../components/Layout/Layout";
 import policy from "../img/privacypolicy.png";
+import "../styles/Policy.css";
 
 const Policy = () => {
     return (

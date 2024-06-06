@@ -1,0 +1,12 @@
+.dashboard-content-products{
+    margin: 0.9rem 0.55rem;
+    max-width: 69rem;
+    border: 0.1rem solid #474d52;
+    border-radius: 0.55rem;
+    padding: 1rem 0.5rem;
+    padding-left: 1rem;
+  }
+
+  .parent-wrapper-products {
+    min-width: auto;
+  }

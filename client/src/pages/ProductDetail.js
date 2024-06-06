@@ -5,6 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useCart } from "../context/cart";
 import ConsoleHelperFrontend from "../ConsoleHelperFrontend";
+import "../styles/ProductDetail.css";
 
 const ProductDetail = () => {
     const params = useParams();
@@ -80,13 +81,14 @@ const ProductDetail = () => {
                     />
                 </div>
                 <div className="col-md-9 dashboard-content-product m-5 p-3">
-                    <h3 className="text-center text-underline">Item Details</h3>
+                    <h3 className="text-center text-underline-detail">Item Details</h3>
                     <h5>Name -: {product.name}</h5>
                     <h5>Description -: {product.description}</h5>
                     <h5>Category -: {category}</h5>
                     <hr />
                     <h2>Price -: {product.price}</h2>
-                    <Link onClick={() => {
+                    <Link
+                        onClick={() => {
                             setCart([...cart, product]);
                             localStorage.setItem(
                                 "cart",
@@ -101,10 +103,6 @@ const ProductDetail = () => {
                     </Link>
                 </div>
             </div>
-            {/* <div className="row dashboard-content-similar">
-                <h3>Similar Products</h3>
-                {JSON.stringify(similarProduct, null, 4)}
-            </div> */}
         </Layout>
     );
 };

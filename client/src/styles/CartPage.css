@@ -1,0 +1,77 @@
+.dashboard-content-cartpage {
+    margin: 0.9rem 0.55rem;
+    max-width: 69rem;
+    border: 0.1rem solid #474d52;
+    border-radius: 0.55rem;
+    padding: 1rem 0.5rem;
+    padding-left: 1rem;
+  }
+
+  .btn-cartpage {
+    display: flex;
+    flex-direction: column;
+    flex: 0;
+    position: relative;
+    right: 5rem;
+    border-radius: 0.5rem;
+    background-color: #ffdee9;
+    color: #474d52;
+    border: 0.1rem solid #474d52;
+    transition: all linear 0.1s;
+    transform: scale(1.0);
+    margin-top: 0.5rem;
+  }
+  
+  .btn-cartpage:hover {
+    color: #ffdee9;
+    background-color: #474d52;
+    border-color: #474d52;
+    transform: scale(0.95);
+    background-color: #474d52;
+    color: #ffdee9;
+    box-shadow: inset;
+  }
+
+  .form-order {
+    /* display: flex; */
+    align-items: center;
+    cursor: default;
+  }
+  
+  .category-link-order {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0.2rem;
+    font-size: 1.2rem;
+    color: #474d52;
+    background-color: #ffdee9;
+    border: 0.1rem solid #474d52;
+    gap: 1;
+    border-radius: 0.5rem;
+    transition: all linear 0.1s;
+    transform: scale(1.0);
+  }
+  
+  .category-link-order:hover {
+    color: #ffdee9;
+    background-color: #474d52;
+    border-color: #474d52;
+    transform: scale(0.95);
+    background-color: #474d52;
+    color: #ffdee9;
+    box-shadow: inset;
+  }
+  
+  .btn-order {
+    width: 100%;
+    background-color: #009cde;
+    color: white;
+  }
+  
+  .btn-order:hover {
+    transition: all linear 0.2s;
+    transform: scale(0.95);
+    color: white;
+  }

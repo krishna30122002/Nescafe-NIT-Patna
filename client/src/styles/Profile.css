@@ -1,0 +1,34 @@
+.dashboard-content-profile {
+  margin: 0.9rem 0.55rem;
+  max-width: 69rem;
+  border: 0.1rem solid #474d52;
+  border-radius: 0.55rem;
+  padding: 1rem 0.5rem;
+  padding-left: 1rem;
+}
+
+.category-link-user {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0.2rem;
+  font-size: 1.2rem;
+  color: #474d52;
+  background-color: #ffdee9;
+  border: 0.1rem solid #474d52;
+  gap: 1;
+  border-radius: 0.5rem;
+  transition: all linear 0.1s;
+  transform: scale(1.0);
+}
+
+.category-link-user:hover {
+  color: #ffdee9;
+  background-color: #474d52;
+  border-color: #474d52;
+  transform: scale(0.95);
+  background-color: #474d52;
+  color: #ffdee9;
+  box-shadow: inset;
+}

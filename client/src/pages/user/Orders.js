@@ -5,6 +5,7 @@ import axios from "axios";
 import { useAuth } from "../../context/auth";
 import moment from "moment";
 import ConsoleHelperFrontend from "../../ConsoleHelperFrontend";
+import "../../styles/Orders.css";
 
 const Orders = () => {
     const [auth] = useAuth();
@@ -39,7 +40,7 @@ const Orders = () => {
                     <div className="col-md-3 dashboard-menu">
                         <UserMenu />
                     </div>
-                    <div className="col-md-9 dashboard-content">
+                    <div className="col-md-9 dashboard-content-orders">
                         <h1 className="text-center">All Orders</h1>
                         {orders?.map((order, idx) => {
                             return (

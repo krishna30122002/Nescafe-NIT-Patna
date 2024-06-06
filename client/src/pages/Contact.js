@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "../components/Layout/Layout";
 import { FaPhone, FaEnvelope } from "react-icons/fa";
 import contactus from "../img/contactus.png";
+import "../styles/ContactUs.css";
 
 const Contact = () => {
     return (

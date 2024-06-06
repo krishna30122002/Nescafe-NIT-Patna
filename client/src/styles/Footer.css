@@ -1,0 +1,43 @@
+.footer-section {
+    padding: 0;
+    margin: 0;
+}
+
+.footer-container {
+    position: relative;
+    /* flex-wrap: wrap; */
+}
+
+.footer-comp {
+    align-items: normal;
+    justify-content: space-around;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+}
+
+.footer-comp:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+@media (max-width: 320px) {
+    .footer-container {
+        bottom: 0;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+.footer-section-2 {
+    width: 100%;
+}
+@media (max-width: 768px) {
+    .category-filter {
+        display: none;
+    }
+
+    .filter-price {
+        display: none;
+    }
+}

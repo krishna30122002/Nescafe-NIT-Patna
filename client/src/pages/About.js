@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "../components/Layout/Layout";
 import me from "../img/me.png";
+import "../styles/About.css";
 
 const About = () => {
     return (
