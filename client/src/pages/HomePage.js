@@ -119,7 +119,7 @@ const HomePage = () => {
 
     return (
         <Layout title="All Products | Nescafé">
-            <div className="row">
+            <div className="row homepage-container">
                 <div className="row mt-3 d-flex flex-column">
                     <div className="col-md-3 dashboard-menu-category">
                         <h3 className="text-center mt-3">Filter by Category</h3>

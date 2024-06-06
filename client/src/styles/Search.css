@@ -21,3 +21,30 @@
     background-color: #474d52;
     border: 0.12rem solid #474d52;
   }
+
+@media only screen and (max-width: 768px) {
+  .search-bar {
+    margin-top: 0;
+    margin-right: 2rem;
+  }
+
+  .search-bar-input {
+    min-width: 20rem;
+  }
+
+  .search-bar-input:hover {
+    border: 0.1rem solid #86aac7;
+  }
+
+  .search-bar-btn {
+    color: #474d52;
+    border: 0.1rem solid #474d52;
+    border-radius: 0.25rem;
+  }
+
+  .search-bar-btn:hover {
+    color: #ffdee9;
+    background-color: #474d52;
+    border: 0.1rem solid #474d52;
+  }
+}

@@ -1,107 +1,3 @@
-.nav-item {
-    transition: transform 0.2s ease;
-    font-size: 1.10rem;
-    font-family: "Josefin Sans", sans-serif;
-}
-
-.nav-item:hover {
-    transform: scale(0.05);
-    border-bottom: 0.05rem solid black;
-}
-
-.navbar {
-    position: relative;
-    box-shadow: 0 0.5rem 0.4rem -0.4rem gray !important;
-    border-bottom: 0.05rem solid gray !important;
-    border-bottom-left-radius: 0.5rem;
-    border-bottom-right-radius: 0.4rem;
-}
-
-.navbar-brand {
-    margin: 0;
-    padding: 0;
-}
-
-.nav-item {
-    font-family: "Josefin Sans", sans-serif;
-}
-
-.navbar-logo {
-    width: 4rem;
-    margin-left: 2rem;
-    transform: scale(1.5)
-}
-
-.navbar-logo {
-    transition: transform 0.3s ease;
-}
-
-.navbar-logo:hover {
-    transform: scale(1.8);
-}
-
-.navbar {
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-.nav-item:hover {
-    transform: scale(1.1);
-    color: black;
-    font-weight: 600;
-}
-
-.navbar-nav {
-    margin-right: 1rem;
-    gap: 1rem;
-}
-
-.nitplogo {
-    transition: transform 0.3s ease;
-    height: 2.75rem;
-    width: 2.75rem;
-}
-
-.nitplogo:hover {
-    transform: scale(1.1);
-}
-
-.social:hover {
-    transform: scale(1.2);
-}
-
-@media (max-width: 480px) {
-    .navbar {
-        box-shadow: none !important;
-        border-bottom: 0.05rem solid gray !important;
-        border-radius: 0;
-        padding: 0.5rem 1rem;
-    }
-
-    .nav-item {
-        font-size: 1rem;
-        display: block;
-        text-align: center;
-        padding: 0.5rem 0;
-        margin: 0.5rem 0;
-    }
-
-    .nav-item:hover {
-        transform: none;
-        border-bottom: 0.05rem solid black;
-    }
-
-    .navbar-brand {
-        font-size: 1.5rem;
-        text-align: center;
-        display: block;
-        width: 100%;
-    }
-}
-
-
-
-
-
 .list-group-admin-homepage {
     border: 0.1rem solid #474d52;
     border-radius: 0.45rem;
@@ -120,6 +16,23 @@
     border-radius: 0.55rem;
     padding: 1rem 0.5rem;
     padding-left: 1rem;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+    .dashboard-content-homepage {
+        margin: 0.5rem 0.3rem;
+        padding: 0.5rem 0.3rem;
+        padding-left: 0.5rem;
+        max-width: 100%;
+    }
+
+    .parent-wrapper-homepage {
+        min-width: 100%;
+    }
+
+    .dashboard-menu-category {
+        margin-bottom: 1rem;
+    }
 }
 
 .product-reset-btn {
@@ -152,27 +65,6 @@
     font-size: 1.1rem;
 }
 
-.dashboard-menu-category {
-    max-width: 23rem;
-    margin-left: 2rem;
-  }
-
-  @media (max-width: 480px) {
-    .dashboard-menu-category {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        max-width: none;
-        margin-left: 0;
-        padding: 1rem;
-        background-color: #fff;
-        box-shadow: 0 -0.2rem 0.5rem rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-        margin-bottom: 7rem;
-    }
-}
 
 .load-more {
     float: right;
@@ -184,11 +76,65 @@
     background-color: #ffdee9;
     border: 2px solid #ffdee9;
     color: #474d52;
-  }
-  
-  .load-more:hover {
+}
+
+.load-more:hover {
     background-color: #474d52;
     color: #ffdee9;
     transition: all linear 0.1s;
     transform: scale(0.95);
-  }
+}
+
+.homepage-container{
+    margin-left: 4rem;
+}
+
+@media only screen and (max-device-width: 480px) and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+    .homepage-container{
+        margin-left: 0rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 25rem;
+    }
+    .dashboard-menu-category{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .dashboard-menu-category>h3 {
+        font-size: 150%;
+    }
+    .category-filter-category {
+        font-size: 85%;
+    }
+    .product-reset-btn{
+        scale: 0.9;
+    }
+    .dashboard-content-homepage{
+        height: auto;
+        width: 18rem;  
+        font-size: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        .parent{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .product-link{
+                scale: 1.2;
+                margin: 4rem 2rem;
+            }
+        }
+    }
+    .dashboard-content-homepage>h1{
+        font-size: 2rem;
+    }
+    .category-filter{
+        min-width: 20rem;
+    }
+}
