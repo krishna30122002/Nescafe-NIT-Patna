@@ -9,7 +9,7 @@ import DropIn from "braintree-web-drop-in-react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import ConsoleHelperFrontend from "../ConsoleHelperFrontend";
-import '../styles/CartPage.css'
+import "../styles/CartPage.css";
 
 const CartPage = () => {
     const navigate = useNavigate();
@@ -42,7 +42,7 @@ const CartPage = () => {
         try {
             let total = 0;
             // eslint-disable-next-line array-callback-return
-            cart?.map(item => {
+            cart?.map((item) => {
                 total = total + item.price;
             });
             return total.toLocaleString(
@@ -82,7 +82,7 @@ const CartPage = () => {
                     cart,
                 }
             );
-            
+
             setLoading(false);
             localStorage.removeItem("cart");
             setCart([]);
@@ -95,8 +95,7 @@ const CartPage = () => {
     };
     return (
         <Layout title={"Orders | Nescafé"}>
-            <div className="container p-0">
-                <div className="m-3">
+        <div className="main-container-cartpage">
                     <h1 className="text-center mb-1">{`Hello ${
                         auth?.token && auth?.user?.name
                     }`}</h1>
@@ -108,74 +107,70 @@ const CartPage = () => {
                             : "Your Orders is Empty"}
                     </h4>
                 </div>
-                <div className="row cart-">
-                    <div className="col md-6 dashboard-content-cartpage ">
-                        <h2
-                            className="margin-of-cart text-center"
-                            style={{
-                                borderBottom: "3px solid gray",
-                                paddingRight: "0.5rem",
-                            }}
-                        >
-                            Orders
-                        </h2>
-                        {cart?.map((p) => (
-                            <div
-                                className="row margin-of-cart"
+            <div className="container-cartpage">
+                
+                <div className="row margin-of-cart1">
+                    <div className="margin-of-cartpage1">
+                        <div className="col md-6 dashboard-content-cartpage ">
+                            <h2
+                                className="text-center"
                                 style={{
-                                    borderBottom: "1px solid gray",
+                                    borderBottom: "3px solid gray",
                                     paddingRight: "0.5rem",
                                 }}
                             >
-                                <div className="col-md-4 mt-1">
-                                    <img
-                                        className="card-img-top product-img"
-                                        src={`${process.env.REACT_APP_API}/api/v1/product/product-photo/${p._id}`}
-                                        alt={p.name}
-                                    />
-                                </div>
-                                <hr
+                                Orders
+                            </h2>
+                            {cart?.map((p) => (
+                                <div
+                                    className="row margin-of-cartcart1"
                                     style={{
-                                        height: 2,
-                                        borderWidth: 0,
-                                        color: "gray",
-                                        backgroundColor: "gray",
+                                        borderBottom: "1px solid gray",
+                                        paddingRight: "0.3rem 0.5rem",
                                     }}
-                                />
-
-                                <div className="col-md-8 p-1 mt-1">
-                                    <h5>{p.name}</h5>
-                                    <p>{p.description.substring(0, 45)}...</p>
-                                    <h5>Price: ₹ {p.price}</h5>
-                                    <div className="d-flex flex-row">
-                                        <button
-                                            className="btn btn-login-pass btn-cartpage btn-cart"
+                                >
+                                    <div className="content-cartpage">
+                                        <div className="col-md-4 mt-1">
+                                            <img
+                                                className="card-img-top product-img-cartpage"
+                                                src={`${process.env.REACT_APP_API}/api/v1/product/product-photo/${p._id}`}
+                                                alt={p.name}
+                                            />
+                                        </div>
+                                        <hr
                                             style={{
-                                                border: "0.125rem solid #ffdee9",
-                                                marginTop: "-0.2rem",
+                                                height: 2,
+                                                borderWidth: 0,
+                                                color: "gray",
+                                                backgroundColor: "gray",
                                             }}
-                                            onClick={() => {
-                                                removeCartItem(p._id);
-                                            }}
-                                        >
-                                            Remove
-                                        </button>
+                                        />
+
+                                        <div className="col-md-8 p-1 mt-1 margin-of-cartcart2">
+                                            <h5>{p.name}</h5>
+                                            <p>
+                                                {p.description.substring(0, 45)}
+                                                ...
+                                            </p>
+                                            <h5>Price: ₹ {p.price}</h5>
+                                        </div>
                                     </div>
+                                    <button
+                                        className="btn btn-login-pass btn-cartpage btn-cart"
+                                        
+                                        onClick={() => {
+                                            removeCartItem(p._id);
+                                        }}
+                                    >
+                                        Remove
+                                    </button>
+                                    <hr />
                                 </div>
-                                <hr />
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
-                    <div className="col-md-6 dashboard-content-cartpage text-center">
-                        <h2
-                            className="margin-of-cart"
-                            style={{
-                                borderBottom: "3px solid gray",
-                                paddingRight: "0.5rem",
-                            }}
-                        >
-                            Orders Summary
-                        </h2>
+                    <div className="col-md-6 dashboard-content-cartpage margin-of-cart2 text-center">
+                        <h2 className="">Orders Summary</h2>
                         <p>Total | Checkout | Payment</p>
                         <hr />
                         <h3>Total: {totalPrice()}</h3>
@@ -232,8 +227,7 @@ const CartPage = () => {
                                         </div>
                                         <div>
                                             {auth?.token ? (
-                                                <div className="col-12 center">
-                                                </div>
+                                                <div className="col-12 center"></div>
                                             ) : (
                                                 <div>
                                                     <button
@@ -249,7 +243,7 @@ const CartPage = () => {
                                                     </button>
                                                 </div>
                                             )}
-                                            <div className="mt-2">
+                                            <div className="mt-2 payment-options">
                                                 {!clientToken ||
                                                 !cart?.length ? (
                                                     ""
@@ -273,11 +267,12 @@ const CartPage = () => {
                                                 )}
                                                 <button
                                                     className="btn btn-order"
-                                                style={{marginTop:"1.5rem"}}
+                                                    style={{
+                                                        marginTop: "1.5rem",
+                                                    }}
                                                     onClick={handlePayment}
                                                     disabled={
-                                                        loading ||
-                                                        !instance
+                                                        loading || !instance
                                                     }
                                                 >
                                                     {loading

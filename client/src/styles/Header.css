@@ -6,7 +6,6 @@
 
 .nav-item:hover {
   transform: scale(0.05);
-  border-bottom: 0.05rem solid black;
 }
 
 .navbar {
@@ -17,8 +16,9 @@
   border-bottom-right-radius: 0.4rem;
   background-color: rgba(0, 0, 0, 0.1);
   align-items: stretch;
-    justify-content: space-around;
-    gap:3.5rem;
+  justify-content: space-around;
+  gap: 3.5rem;
+  /* z-index: 1000; */
 }
 
 .navbar-brand {
@@ -68,7 +68,7 @@
   transform: scale(1.2);
 }
 
-.navbar-toggler{
+.navbar-toggler {
   order: 3;
 }
 
@@ -76,6 +76,10 @@
 
   .nav-item {
     font-size: 1rem;
+  }
+
+  .nav-item:hover {
+    transform: scale(1.05);
   }
 
   .navbar {
@@ -104,7 +108,8 @@
     width: 2.25rem;
     order: 2;
   }
-  .navbar-toggler{
+
+  .navbar-toggler {
     order: 3;
     margin-right: 2rem;
   }

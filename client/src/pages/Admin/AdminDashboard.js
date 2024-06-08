@@ -6,8 +6,6 @@ import '../../styles/AdminDashboard.css'
 
 const AdminDashboard = () => {
     const [auth] = useAuth();
-
-
     useEffect(() => {
       const favicon = document.querySelector("link[rel='icon']");
       favicon.href = "../img/favicon.ico";

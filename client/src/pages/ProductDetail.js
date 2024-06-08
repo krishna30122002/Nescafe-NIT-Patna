@@ -72,7 +72,7 @@ const ProductDetail = () => {
 
     return (
         <Layout title="Item Details | Nescafé">
-            <div className="row d-flex flex-row">
+            <div className="detail-container">
                 <div className="col-md-3 dashboard-menu-product ml-5 mt-5 p-3">
                     <img
                         className="card-img-top product-img"
@@ -82,11 +82,11 @@ const ProductDetail = () => {
                 </div>
                 <div className="col-md-9 dashboard-content-product m-5 p-3">
                     <h3 className="text-center text-underline-detail">Item Details</h3>
-                    <h5>Name -: {product.name}</h5>
-                    <h5>Description -: {product.description}</h5>
-                    <h5>Category -: {category}</h5>
+                    <h5><span className="text-underline-heading">Name</span> -: {product.name}</h5>
+                    <h5><span className="text-underline-heading">Description</span> -: {product.description}</h5>
+                    <h5><span className="text-underline-heading">Category</span> -: {category}</h5>
                     <hr />
-                    <h2>Price -: {product.price}</h2>
+                    <h2><span className="text-underline-heading">Price</span> -: {product.price}</h2>
                     <Link
                         onClick={() => {
                             setCart([...cart, product]);

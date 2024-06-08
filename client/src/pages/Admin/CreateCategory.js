@@ -6,7 +6,7 @@ import axios from "axios";
 import CategoryForm from "../../components/Form/CategoryForm";
 import { Modal } from "antd";
 import ConsoleHelperFrontend from "../../ConsoleHelperFrontend";
-import '../../styles/CreateCategory.css'
+import "../../styles/CreateCategory.css";
 
 const CreateCategory = () => {
     useEffect(() => {
@@ -102,8 +102,8 @@ const CreateCategory = () => {
     };
     return (
         <Layout title="Create Category | Admin">
-            <div className="container-fluid">
-                <div className="row">
+            <div className="container-fluid ">
+                <div className="row container-category">
                     <div className="col-md-3 dashboard-menu">
                         <AdminMenu />
                     </div>
@@ -116,7 +116,7 @@ const CreateCategory = () => {
                                 setValue={setName}
                             />
                         </div>
-                        <div className="w-75">
+                        <div className="main-container-dashboard">
                             <table classname="table table-category">
                                 <thead>
                                     <tr className="table-row-category">
@@ -136,47 +136,50 @@ const CreateCategory = () => {
                                 </thead>
                                 <tbody className="table-data-row">
                                     {categories?.map((c) => (
-                                        <>
-                                            <tr>
-                                                <td
-                                                    className="table-data-row-data"
-                                                    key={c._id}
-                                                >
-                                                    {c.name}
-                                                </td>
+                                        <tr>
+                                            <div>
                                                 <td className="table-data-1">
-                                                    <button
-                                                        className="btn btn-primary btn-category"
-                                                        onClick={() => {
-                                                            setVisible(true);
-                                                            setUpdatedName(
-                                                                c.name
-                                                            );
-                                                            setSelected(c);
-                                                        }}
-                                                    >
-                                                        Edit
-                                                    </button>
-                                                    <button
-                                                        style={{
-                                                            backgroundColor:
-                                                                "#ffdee9",
-                                                            color: "#474d52",
-                                                            border: "0.15rem solid #ffdee9",
-                                                        }}
-                                                        className="btn btn-category"
-                                                        onClick={() =>
-                                                            handleDelete(
-                                                                c._id,
-                                                                c.name
-                                                            )
-                                                        }
-                                                    >
-                                                        Delete
-                                                    </button>
+                                                    <div className="table-data-row-data-1">
+                                                        <p key={c._id}>
+                                                            {c.name}
+                                                        </p>
+                                                    </div>
+                                                    <div className="table-data-row-data-2">
+                                                        <button
+                                                            className="btn-category-1"
+                                                            onClick={() => {
+                                                                setVisible(
+                                                                    true
+                                                                );
+                                                                setUpdatedName(
+                                                                    c.name
+                                                                );
+                                                                setSelected(c);
+                                                            }}
+                                                        >
+                                                            Edit
+                                                        </button>
+                                                        <button
+                                                            style={{
+                                                                backgroundColor:
+                                                                    "#ffdee9",
+                                                                color: "#474d52",
+                                                                border: "0.15rem solid #ffdee9",
+                                                            }}
+                                                            className=" btn-category-2"
+                                                            onClick={() =>
+                                                                handleDelete(
+                                                                    c._id,
+                                                                    c.name
+                                                                )
+                                                            }
+                                                        >
+                                                            Delete
+                                                        </button>
+                                                    </div>
                                                 </td>
-                                            </tr>
-                                        </>
+                                            </div>
+                                        </tr>
                                     ))}
                                 </tbody>
                             </table>

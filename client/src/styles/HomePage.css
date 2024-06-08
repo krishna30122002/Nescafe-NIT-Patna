@@ -1,3 +1,4 @@
+
 .list-group-admin-homepage {
     border: 0.1rem solid #474d52;
     border-radius: 0.45rem;
@@ -6,12 +7,12 @@
 
 
 .parent-wrapper-homepage {
-    min-width: auto;
+    min-width: 71rem;
 }
 
 .dashboard-content-homepage {
     margin: 0.9rem 0.55rem;
-    max-width: 69rem;
+    max-width: 71rem;
     border: 0.1rem solid #474d52;
     border-radius: 0.55rem;
     padding: 1rem 0.5rem;
@@ -57,7 +58,6 @@
 }
 
 .category-filter {
-    margin-left: 1rem;
     padding: 1rem;
 }
 
@@ -86,10 +86,29 @@
 }
 
 .homepage-container{
-    margin-left: 4rem;
+    margin-left: 2rem;
 }
 
 @media only screen and (max-device-width: 480px) and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+    
+        .card-text-homepage{
+            font-size: 80%;
+        }
+        
+        .card-title-homepage{
+            font-size: 150%;
+        }
+        .card-title-text-homepage{
+            font-size: 90%;
+        }
+    
+
+    .card-title-text-homepage-price{
+        
+            font-size: 150%;
+        
+    }
+    
     .homepage-container{
         margin-left: 0rem;
         display: flex;
@@ -137,4 +156,9 @@
     .category-filter{
         min-width: 20rem;
     }
+}
+
+.dashboard-menu-category{
+    margin-left: 0 !important ;
+    min-width: 28% !important;
 }

@@ -38,13 +38,13 @@ const Products = () => {
     return (
         <Layout title="All Products | Admin">
             <div className="container-fluid">
-                <div className="row">
+                <div className="row product-category">
                     <div className="col-md-3 dashboard-menu">
                         <AdminMenu />
                     </div>
                     <div className="col-md-9 dashboard-content-products parent-wrapper-products">
                         <h1 className="text-center">All Products</h1>
-                        <div className="d-flex parent">
+                        <div className="d-flex parent parent-wrapper-products">
                             {products?.map((p) => (
                                 <Link
                                     key={p._id}
