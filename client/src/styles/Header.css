@@ -18,7 +18,6 @@
   align-items: stretch;
   justify-content: space-around;
   gap: 3.5rem;
-  /* z-index: 1000; */
 }
 
 .navbar-brand {

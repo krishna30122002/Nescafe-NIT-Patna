@@ -3,3 +3,25 @@
     margin-right: 2rem;
     height: 20rem;
   }
+
+  @media only screen and (min-device-width: 320px) and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+    
+    .policy-content{
+      align-items: center;
+      justify-content: center;
+      margin: 0.3rem 0.6rem;
+      margin-right: 3rem;
+      h1{
+        font-size: 80%;
+      }
+      h2{
+        font-size: 80%;
+      }
+      h3{
+        font-size: 80%;
+      }
+      p{
+        font-size: 80%;
+      }
+    }
+  }

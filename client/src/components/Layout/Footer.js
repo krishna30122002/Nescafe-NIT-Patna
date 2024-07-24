@@ -57,7 +57,7 @@ const Footer = () => {
                         style={{ backgroundColor: "rgba(0, 0, 0, 0.1)" }}
                     >
                         &copy; 2024 Copyright :
-                        <Link className="text-dark" to="/">
+                        <Link className="text-dark" to="https://krishnaverma.netlify.app/">
                             ‎ Krishna
                         </Link>
                         {/* <hr /> */}

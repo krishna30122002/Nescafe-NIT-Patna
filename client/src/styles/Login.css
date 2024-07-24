@@ -50,13 +50,30 @@
 }
 
 .login-page form button {
-  width: 12.6736rem !important;
-  align-content: space-between !important;
+  width: 10rem !important;
+  align-content: space-between ;
 }
 
-@media only screen and (max-device-width: 480px) and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+.button-space{
+  display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* width: 100%; */
+    gap: 0.7rem;
+}
+
+@media only screen and (max-device-width: 320px) and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+  .button-space{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /* width: 100%; */
+    gap: 1rem !important;
+  }
   .login-page form button {
-    width: 10.6736rem !important;
+    width: 10.9rem !important;
     align-content: space-between !important;
   }
 }

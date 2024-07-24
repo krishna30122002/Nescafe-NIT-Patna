@@ -7,7 +7,7 @@ const About = () => {
     return (
         <Layout title="About Us">
             <div className="row contact-cont">
-                <div className="col-md-6">
+                <div className="col-md-6 about-img">
                     <img
                         src={me}
                         className="img-fluid rounded-start about-me"
