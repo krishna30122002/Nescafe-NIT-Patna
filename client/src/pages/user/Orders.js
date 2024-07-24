@@ -47,7 +47,7 @@ const Orders = () => {
                                 <div className="shadow container-orders">
                                     <table class="table container-table">
                                         <thead className="container-table-head">
-                                            <tr>
+                                            <tr className="table-row-products">
                                                 <th scope="col">No.</th>
                                                 <th scope="col">Status</th>
                                                 <th scope="col">Buyer</th>
@@ -57,7 +57,7 @@ const Orders = () => {
                                             </tr>
                                         </thead>
                                         <tbody className="container-table-row">
-                                            <tr>
+                                            <tr className="table-row-products-2">
                                                 <td>{idx + 1}</td>
                                                 <td>{order?.status}</td>
                                                 <td>{order?.buyer?.name}</td>
@@ -80,7 +80,7 @@ const Orders = () => {
                                     <div className="container">
                                         {order?.products?.map((p, i) => (
                                             <div
-                                                className="row margin-of-cart"
+                                                className="row margin-of-cart-orders"
                                                 style={{
                                                     borderBottom:
                                                         "1px solid gray",
@@ -94,15 +94,6 @@ const Orders = () => {
                                                         alt={p.name}
                                                     />
                                                 </div>
-                                                <hr
-                                                    style={{
-                                                        height: 2,
-                                                        borderWidth: 0,
-                                                        color: "gray",
-                                                        backgroundColor: "gray",
-                                                    }}
-                                                />
-
                                                 <div className="col-md-8 p-1 mt-1 data-orders">
                                                     <h4>{p.name}</h4>
                                                     <p>
@@ -114,7 +105,7 @@ const Orders = () => {
                                                     </p>
                                                     <h3>Price: ₹ {p.price}</h3>
                                                 </div>
-                                                <hr />
+                                                <hr className="divider" />
                                             </div>
                                         ))}
                                     </div>

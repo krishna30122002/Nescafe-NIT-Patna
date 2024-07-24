@@ -25,7 +25,7 @@ const Spinner = ({path="login"}) => {
                 <div className="spinner-border" role="status">
                     <span className="visually-hidden"></span>
                 </div>
-                <h1 className="text-center mt-3">Redirecting in {count} sec</h1>
+                <h3 className="text-center mt-3 spinner-heading">Redirecting in {count} sec</h3>
             </div>
         </>
     );

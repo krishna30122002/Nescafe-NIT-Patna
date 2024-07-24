@@ -1,8 +1,59 @@
-.dashboard-content-categoryproduct {
+.dashboard-content-category-product {
     margin: 0.9rem 0.55rem;
     max-width: 69rem;
     border: 0.1rem solid #474d52;
     border-radius: 0.55rem;
     padding: 1rem 0.5rem;
     padding-left: 1rem;
+}
+
+.container-product>h1 {
+    margin-top: 5rem;
+}
+
+.child-homepage-product{
+    width: 15.6rem !important;
+    height: auto !important;
+}
+
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+    .container-product {
+        h1 {
+            margin-top: 5rem;
+            font-size: 1.75rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+        }
+    }
+
+    .dashboard-content-category-product {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .product-link{
+        height: auto;
+        width: auto;
+    }
+
+    .child-homepage-product{
+        width: 9rem !important;
+        height: auto !important;
+        p{
+            font-size: 0.7rem;
+        }
+        h5{
+            font-size: 1rem;
+        }
+        .product-submit-btn{
+            font-size: 0.8rem;
+        }
+        .card-title-text-homepage-price{
+            font-size: 1.0rem;
+        }
+    }
 }

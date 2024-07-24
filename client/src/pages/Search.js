@@ -13,13 +13,13 @@ const Search = () => {
         <Layout title={"Seach Results | Nescafé"}>
             <div className="container mt-4 mb-4">
                 <div className="text-center">
-                    <h1 className="mt-4">Search Results</h1>
+                    <h1 className="heading-search">Search Results</h1>
                     <h6 className="mt-4">
                         {values?.result.length < 1
                             ? "No Products Found"
                             : `Found ${values?.result.length} results`}
                     </h6>
-                    <div className="d-flex parent">
+                    <div className="d-flex parent-search">
                         {values?.result.map((p) => (
                             <Link
                                 key={p._id}

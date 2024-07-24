@@ -82,6 +82,7 @@ const Login = () => {
                     <div id="emailHelp" className="form-text">
                         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
                     </div>
+                    <div className="button-space">
                     <button
                         type="submit"
                         className="btn btn-login-pass"
@@ -100,6 +101,7 @@ const Login = () => {
                     <button type="submit" className="btn btn-login">
                         Login
                     </button>
+                    </div>
                 </form>
             </div>
         </Layout>

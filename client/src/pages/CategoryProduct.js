@@ -3,14 +3,15 @@ import Layout from "../components/Layout/Layout";
 import axios from "axios";
 import { useParams, Link, NavLink } from "react-router-dom";
 import ConsoleHelperFrontend from "../ConsoleHelperFrontend";
-import '../styles/CategoryProduct.css'
+import "../styles/CategoryProduct.css";
+import toast from "react-hot-toast";
+import { useCart } from "../context/cart";
 
 const CategoryProduct = () => {
     const [products, setProducts] = useState([]);
     const [category, setCategory] = useState([]);
-    // const [total, setTotal] = useState(0);
-    // const [page, setPage] = useState(1);
-    // const [loading, setLoading] = useState(false);
+    const [cart, setCart]= useCart();
+
 
     useEffect(() => {
         const favicon = document.querySelector("link[rel='icon']");
@@ -42,13 +43,13 @@ const CategoryProduct = () => {
     };
     return (
         <Layout>
-            <div className="container mt-3 mb-2">
+            <div className="container mt-3 mb-2 container-product">
                 <h1 className="text-center">Category -: {category?.name}</h1>
                 <h3 className="text-center text-underline-product">
                     {products?.length} results found
                 </h3>
                 <div className="row">
-                    <div className="col-md-9 dashboard-content-categoryproduct">
+                    <div className="col-md-9 dashboard-content-category-product">
                         {/* {JSON.stringify(checked, null, 4)} */}
                         <h3 className="m-2 mb-3">Products:</h3>
                         <div className="d-flex parent">
@@ -59,10 +60,8 @@ const CategoryProduct = () => {
                                     className="product-link"
                                 >
                                     <div
-                                        className="card m-2 child child-homepage"
-                                        style={{
-                                            width: "15.6rem",
-                                        }}
+                                        className="card m-2 child child-homepage-product"
+                                       
                                     >
                                         <img
                                             className="card-img-top product-img"
@@ -86,7 +85,23 @@ const CategoryProduct = () => {
                                             <p className="card-text card-title-text-homepage card-title-text-homepage-price">
                                                 ₹ {p.price}
                                             </p>
-                                            <Link to={"/cart"} className="btn btn-primary homepage-btn product-submit-btn">
+                                            <Link
+                                            onClick={() => {
+                                                    setCart([...cart, p]);
+                                                    localStorage.setItem(
+                                                        "cart",
+                                                        JSON.stringify([
+                                                            ...cart,
+                                                            p,
+                                                        ])
+                                                    );
+                                                    toast.success(
+                                                        "Product added to Orders"
+                                                    );
+                                                }}
+                                                // to={"/orders"}
+                                                className="btn btn-primary homepage-btn product-submit-btn"
+                                            >
                                                 Add To Orders
                                             </Link>
                                         </div>

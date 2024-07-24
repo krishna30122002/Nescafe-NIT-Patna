@@ -15,7 +15,7 @@ const Policy = () => {
                         style={{ width: "100%" }}
                     />
                 </div>
-                <div className="col-md-4 about-content">
+                <div className="col-md-4 about-content policy-content">
                     <h1 className="bg-dark p-2 text-white text-center about-title">
                         Privacy Policy
                     </h1>
