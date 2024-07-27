@@ -26,10 +26,15 @@
   margin: 1rem 0.5rem;
 }
 
+.product-img-orders {
+  height: 7rem;
+  width: auto;
+  margin-left: 5rem;
+}
 
 .image-orders {
-  width: auto;
-  height: auto;
+  width: 2rem !important; 
+  height: 2rem !important;
 }
 
 .divider {
@@ -55,6 +60,11 @@
     html {
       font-size: 70%;
     }
+  }
+
+  .image-orders {
+    width: auto !important; 
+    height: auto !important;
   }
 
   .margin-of-cart-orders {
