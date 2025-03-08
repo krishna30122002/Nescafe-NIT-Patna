@@ -10,7 +10,7 @@ const Search = () => {
 
     const [values] = useSearch();
     return (
-        <Layout title={"Seach Results | Nescafé"}>
+        <Layout title={"Search Results | Nescafé"}>
             <div className="container mt-4 mb-4">
                 <div className="text-center">
                     <h1 className="heading-search">Search Results</h1>

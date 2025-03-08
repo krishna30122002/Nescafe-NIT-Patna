@@ -28,6 +28,11 @@ router.get("/get-category", getAllCategoryController);
 
 router.get("/single-category/:slug", getSingleCategoryController);
 
-router.delete("/delete-category/:id",requireSignIn,isAdmin, deleteCategoryController);
+router.delete(
+    "/delete-category/:id",
+    requireSignIn,
+    isAdmin,
+    deleteCategoryController
+);
 
 export default router;

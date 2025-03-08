@@ -16,7 +16,8 @@ const SearchInput = () => {
                 `${process.env.REACT_APP_API}/api/v1/product/search/${values.keyword}`
             );
             setValues({ ...values, result: data });
-            navigate("/search");
+            navigate("/");
+            // navigate("/search");
         } catch (error) {
             
             ConsoleHelperFrontend(error);

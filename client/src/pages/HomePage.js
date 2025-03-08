@@ -128,9 +128,9 @@ const HomePage = () => {
                                 <Checkbox
                                     className="category-filter-category"
                                     key={c._id}
-                                    onChange={(e) =>
-                                        handleFilter(e.target.checked, c._id)
-                                    }
+                                    // onChange={(e) =>
+                                    //     handleFilter(e.target.checked, c._id)
+                                    // }
                                 >
                                     {c.name}
                                 </Checkbox>
@@ -172,7 +172,8 @@ const HomePage = () => {
                             {products?.map((p) => (
                                 <Link
                                     key={p._id}
-                                    to={`/product/${p.slug}`}
+                                    to={`/`}
+                                    // to={`/product/${p.slug}`}
                                     className="product-link"
                                 >
                                     <div

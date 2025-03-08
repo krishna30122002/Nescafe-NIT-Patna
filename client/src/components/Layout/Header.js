@@ -79,11 +79,6 @@ const Header = () => {
                                 data-toggle="dropdown"
                                 aria-haspopup="true"
                                 aria-expanded="false"
-                                // after turning on toggle decomment below lines
-
-                                // id="navbarDropdownMenuLink"
-                                // data-toggle="dropdown"
-                                // aria-haspopup="true"
                             >
                                 Categories
                             </NavLink>
@@ -91,7 +86,8 @@ const Header = () => {
                                 <li>
                                     <Link
                                         className="dropdown-item"
-                                        to="/categories"
+                                        to="/"
+                                        // to="/categories"
                                     >
                                         All Categories
                                     </Link>
@@ -101,7 +97,8 @@ const Header = () => {
                                         <Link
                                             key={c._id}
                                             className="dropdown-item"
-                                            to={`/category/${c.slug}`}
+                                            to="/"
+                                            // to={`/category/${c.slug}`}
                                         >
                                             {c.name}
                                         </Link>
@@ -145,11 +142,12 @@ const Header = () => {
                                     >
                                         <NavLink
                                             className="dropdown-item"
-                                            to={`/dashboard/${
-                                                auth?.user?.role === 1
-                                                    ? "admin"
-                                                    : "user"
-                                            }`}
+                                            to="/"
+                                            // to={`/dashboard/${
+                                            //     auth?.user?.role === 1
+                                            //         ? "admin"
+                                            //         : "user"
+                                            // }`}
                                         >
                                             Dashboard
                                         </NavLink>
@@ -167,7 +165,11 @@ const Header = () => {
                         )}
                         <li className="nav-item">
                             <Badge className="badge-small" count={cart?.length}>
-                                <NavLink className="nav-link" to="/orders">
+                                <NavLink 
+                                className="nav-link" 
+                                // to="/"
+                                to="/orders"
+                                >
                                     <h6 className="mt-1">Orders</h6>
                                 </NavLink>
                             </Badge>
